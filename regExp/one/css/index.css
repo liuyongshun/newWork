@@ -1,0 +1,13 @@
+#judges {
+    width: 150px;
+    margin: 15px;
+    padding: 5px 10px;
+    border: none;
+    background-color: red;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#judges:hover {
+    opacity: 0.7;
+}
