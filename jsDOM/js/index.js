@@ -8,7 +8,7 @@
 
 
 
-// ===============选择标签方式====================
+// =========================================选择标签方式====================================
 //jQuery根据样式选择器查找元素的终极方式是 先用getElementsByTagName(*)（所以说原生js比jquery快）获取所有DOM元素，然后根据样式选择器对所有DOM元素进行筛选。
 
 // 1、id  IE7及以上  IE7中如果该方式会匹配name属性。
@@ -51,20 +51,23 @@
 // console.log( name )  //返回[object NodeList]
 
 
-//llMLDOM操作 节点及操作。
+//==============================DOM操作 节点及操作。====================================
 
 // 一、创建节点   这里值创造了一个p只能添加到一个标签内。IE5及以上。
-// 1、创建元素
-var elements = document.createElement( "p" );
-// 2、创建文本
-var createText = document.createTextNode( "这是创建的文本节点" );
-// 3、添加节点
-var finshP = elements.appendChild( createText );
-document.getElementById( "test-id" ).appendChild( finshP );
+// // 1、创建元素
+// var elements = document.createElement( "p" );
+// // 2、创建文本
+// var createText = document.createTextNode( "这是创建的文本节点" );
+// // 3、添加节点
+// var finshP = elements.appendChild( createText );
+// document.getElementById( "test-id" ).appendChild( finshP );
 
 
 // 二、 移除子节点；
-document.getElementById( "list" ).removeChild( "li" );
+var list = document.getElementById( "list" );
+var li = document.getElementById( "item1" );
+list.removeChild( list.childNodes[2] );
+console.log( list.childNodes )
 
 
 

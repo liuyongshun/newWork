@@ -47,32 +47,66 @@
 // obj.method();
 
 
+
+
+var checkEmail = {
+    // judges为提交按钮，
+    getSelect: document.getElementById( 'judges' ),
+    // text为输入邮箱的input标签。
+    getValue: document.getElementById( 'text' ),
+    method: function() {
+        var that = this;
+        if( !document.addEventListener ) {
+            this.getSelect.attachEvent( 'onclick', function() {
+            var str = that.getValue.value;
+            var patt = /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;            
+            var check = str.match( patt );
+            if ( !check ) {
+                // 换成现在用的提示效果
+                alert( 'format error' );
+            }           
+        } );                         
+        } else {
+            this.getSelect.addEventListener( 'click', function() {
+            var str = that.getValue.value;
+            var patt = /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;            
+            var check = str.match( patt );
+            if ( !check ) {
+                 // 换成现在用的提示效果
+                alert( 'format error' );
+            }
+        } );   
+        }
+    }
+}
+checkEmail.method();
+
 // ====================practice rank========================================================
-var str = "hat hot my telephone is 18330234567 email: liulfjs@126.com\n" 
-// search 括号内任意字符，为设置g时，找到ema中的任何一个都会停止。[a-z]
-var patt = /[ema]/;
-console.log( str.match( patt ) );
-// 查找除了括号内所有的字符。[^]
-var patt1 = /[^ema]/g;
-console.log( str.match( patt1 ) );
-// 查找任何从 0 至 3 的数字。[0-5]
-var patt2 = /[0-3]/g;
-console.log( str.match( patt2 ) );
-// 查找任何指定的选项。(em|liu|shun)
-var patt3 = /(ema|is|liu)/g;
-console.log( str.match( patt3 ) );
-// 查找单个字符,除了换行和行结束符。 h.t
-var patt4 = /h.t/g;
-console.log( str.match( patt4 ) );
-// 查找单词字符。 \w(小写)
-var patt5 = /\w/g;
-console.log( str.match( patt5 ) );
-// 查找非单词字符。\W（大写）
-var patt6 = /\W/g;
-console.log( str.match( patt6 ) );
-// 查找数字\d（小写，大写是查找非数字）
-var patt7 = /\d/g;
-console.log( str.match( patt7 ) );
-var patt8 = /\D/g;
-console.log( str.match( patt8 ) );
-// 查找空白字符
+// var str = "hat hot my telephone is 18330234567 email: liulfjs@126.com\n" 
+// // search 括号内任意字符，为设置g时，找到ema中的任何一个都会停止。[a-z]
+// var patt = /[ema]/;
+// console.log( str.match( patt ) );
+// // 查找除了括号内所有的字符。[^]
+// var patt1 = /[^ema]/g;
+// console.log( str.match( patt1 ) );
+// // 查找任何从 0 至 3 的数字。[0-5]
+// var patt2 = /[0-3]/g;
+// console.log( str.match( patt2 ) );
+// // 查找任何指定的选项。(em|liu|shun)
+// var patt3 = /(ema|is|liu)/g;
+// console.log( str.match( patt3 ) );
+// // 查找单个字符,除了换行和行结束符。 h.t
+// var patt4 = /h.t/g;
+// console.log( str.match( patt4 ) );
+// // 查找单词字符。 \w(小写)
+// var patt5 = /\w/g;
+// console.log( str.match( patt5 ) );
+// // 查找非单词字符。\W（大写）
+// var patt6 = /\W/g;
+// console.log( str.match( patt6 ) );
+// // 查找数字\d（小写，大写是查找非数字）
+// var patt7 = /\d/g;
+// console.log( str.match( patt7 ) );
+// var patt8 = /\D/g;
+// console.log( str.match( patt8 ) );
+// // 查找空白字符
