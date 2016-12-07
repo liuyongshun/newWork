@@ -110,3 +110,9 @@
 // var patt8 = /\D/g;
 // console.log( str.match( patt8 ) );
 // // 查找空白字符
+
+
+// test meet
+var str = "hels///// d?"
+var patt = /\/?(?:\?.*)?$/g;
+console.log( patt.exec( str ) )
