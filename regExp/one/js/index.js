@@ -49,37 +49,37 @@
 
 
 
-var checkEmail = {
-    // judges为提交按钮，
-    getSelect: document.getElementById( 'judges' ),
-    // text为输入邮箱的input标签。
-    getValue: document.getElementById( 'text' ),
-    method: function() {
-        var that = this;
-        if( !document.addEventListener ) {
-            this.getSelect.attachEvent( 'onclick', function() {
-            var str = that.getValue.value;
-            var patt = /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;            
-            var check = str.match( patt );
-            if ( !check ) {
-                // 换成现在用的提示效果
-                alert( 'format error' );
-            }           
-        } );                         
-        } else {
-            this.getSelect.addEventListener( 'click', function() {
-            var str = that.getValue.value;
-            var patt = /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;            
-            var check = str.match( patt );
-            if ( !check ) {
-                 // 换成现在用的提示效果
-                alert( 'format error' );
-            }
-        } );   
-        }
-    }
-}
-checkEmail.method();
+// var checkEmail = {
+//     // judges为提交按钮，
+//     getSelect: document.getElementById( 'judges' ),
+//     // text为输入邮箱的input标签。
+//     getValue: document.getElementById( 'text' ),
+//     method: function() {
+//         var that = this;
+//         if( !document.addEventListener ) {
+//             this.getSelect.attachEvent( 'onclick', function() {
+//             var str = that.getValue.value;
+//             var patt = /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;            
+//             var check = str.match( patt );
+//             if ( !check ) {
+//                 // 换成现在用的提示效果
+//                 alert( 'format error' );
+//             }           
+//         } );                         
+//         } else {
+//             this.getSelect.addEventListener( 'click', function() {
+//             var str = that.getValue.value;
+//             var patt = /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;            
+//             var check = str.match( patt );
+//             if ( !check ) {
+//                  // 换成现在用的提示效果
+//                 alert( 'format error' );
+//             }
+//         } );   
+//         }
+//     }
+// }
+// checkEmail.method();
 
 // ====================practice rank========================================================
 // var str = "hat hot my telephone is 18330234567 email: liulfjs@126.com\n" 
