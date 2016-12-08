@@ -1,0 +1,21 @@
+{
+  "name": "liu",
+  "version": "1.0.0",
+  "description": "look back nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test command text"
+  },
+  "repository": {
+    "type": "git",
+    "url": "this is repository"
+  },
+  "keywords": [
+    "yongshun"
+  ],
+  "author": "liuyongshun",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
