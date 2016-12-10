@@ -1,6 +1,32 @@
-    .triangle {
-        width: 0;
-        height: 0;       
-        border-right: 10px solid transparent;
-        border-top: 15px solid #c59c53;
-    }
+.triangle {
+    width: 0;
+    height: 0;       
+    border-right: 10px solid transparent;
+    border-top: 15px solid #c59c53;
+}
+
+
+/*================inline-block=================*/
+.block,
+.inline {
+    display: inline-block;        
+    width: 300px;
+    height: 200px;
+    background-color: red;
+}
+/*if you will switch block*/
+.block {
+    display: inline-block;
+    /* *IE7及已下识别，触发haslayout  */
+    *display: inline;
+    *zoom: 1;
+}
+/*==========end inline-block===================*/
+
+/*========max and min ========================*/
+.max-min {
+    max-width: 300px;
+    min-height: 200px;
+    background-color: blue;
+}
+/*==========end max and min=====================*/
