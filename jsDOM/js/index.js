@@ -149,6 +149,39 @@
 // console.log( testNodeName.getAttributeNode( "class" ).nodeType );
 // console.log( document.nodeType );
  
+//=================================================================HTML DOM导航 及应用============================================================================
+
+// 1、数组方式导航
+var subnav = document.getElementsByClassName( "subnav" );
+for( var i =0; i < subnav.length; i ++) {
+    subnav[i].innerHTML = "nav"; 
+}
+// 2、parentNode、firstChild(代表文本节点等于childNodes[0]) 以及 lastChild是子元素的最后一个      IE7+
+var nav = document.getElementById( "nav" );
+console.log( nav.lastChild.nodeType );
+// 3、根节点  document.documentElement - 全部文档，document.body - 文档的主体
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // for( key in test ) {
 //     key.innerHTML = "999";
