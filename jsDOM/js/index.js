@@ -81,7 +81,7 @@
 // // 10、attributes    attributes 属性返回指定节点的属性集合，即 NamedNodeMap。
 // var attributes = document.getElementById( "active" ).attributes;
 // console.log( attributes );
-// // 四、移除子节点
+// // 四、移除子节点    	能否在不引用父元素的情况下删除某个元素？ 很抱歉。DOM 需要了解您需要删除的元素，以及它的父元素。
 // // 11.移除子节点； IE7+
 // var list = document.getElementById( "list" );
 // var li = document.getElementById( "item1" );
@@ -106,36 +106,48 @@
 // // 父节点添加属性 IE7+
 // subNode.parentNode.setAttributeNode( createAttr2 );
 
-// // 2、替换节点  node.replaceChild(newnode,oldnode)   PS:1、 第一参数是newNode，第二个是olderNode。 2、new替换older后，new将从原来位置消失，替换到older位置，且older被删除。
+// // 2、替换节点  node.replaceChild(newnode,oldnode)   PS:1、 第一参数是newNode，第二个是olderNode。 2、new替换older后，new将从原来位置消失，替换到older位置，且older被删除。 3、replaceChild是替换子节点，子节点，就、子节点
 // var olderReplace = document.getElementsByClassName( "older" );
 // var newReplace = document.getElementsByClassName( "new" );
 // document.getElementById( "buttonReplace" ).addEventListener( "click", function() {
 //     olderReplace[0].parentNode.replaceChild( newReplace[0], olderReplace[1] );
 // } )
 
+// // 3、insertBefore()在之前添加。
+// var createP = document.createElement( "p" );
+// var createText3 = document.createTextNode( "this is text of p" );
+// var createAttr3 = document.createAttribute( "class" );
+// var existParent = document.getElementById( "parent" );
+// var existP = document.getElementById( "sub" );
+// createAttr3.value = "createClass";
+// createP.setAttributeNode( createAttr3 );
+// createP.appendChild( createText3 );
+// // node.insertBefore(newnode,existingnode) 方法在您指定的已有子节点之前插入新的子节点
+// existParent.insertBefore( createP, existP );
+
 
 //=================================================================HTML DOM属性 及应用============================================================================
 
-// 1、innerHTML属性
-var testHTML = document.getElementById( "test-innerHTML" );
-testHTML.innerHTML = "innerHTML text";
-testHTML.innerHTML = "<p>increase tag as childNode</p>";
-// 2、nodeName属性nodeName 是只读的，元素节点的 nodeName 与标签名相同，属性节点的 nodeName 与属性名相同，文本节点的 nodeName 始终是 #text    文档节点的 nodeName 始终是 #document
-var testNodeName = document.getElementById( "testNodeName" );
-console.log( testNodeName.nodeName );
-console.log( testNodeName.childNodes[0].nodeName);
-console.log( testNodeName.getAttributeNode( "class" ).nodeName );
-console.log( document.nodeName );
-// 3、nodeValue属性  元素节点的 nodeValue 是 undefined 或 null，文本节点的 nodeValue 是文本本身，属性节点的 nodeValue 是属性值
-console.log( testNodeName.nodeValue );
-console.log( testNodeName.childNodes[0].nodeValue);
-console.log( testNodeName.getAttributeNode( "class" ).nodeValue );
-console.log( document.nodeValue );
-// 4、nodeType属性
-console.log( testNodeName.nodeType );
-console.log( testNodeName.childNodes[0].nodeType);
-console.log( testNodeName.getAttributeNode( "class" ).nodeType );
-console.log( document.nodeType );
+// // 1、innerHTML属性
+// var testHTML = document.getElementById( "test-innerHTML" );
+// testHTML.innerHTML = "innerHTML text";
+// testHTML.innerHTML = "<p>increase tag as childNode</p>";
+// // 2、nodeName属性nodeName 是只读的，元素节点的 nodeName 与标签名相同，属性节点的 nodeName 与属性名相同，文本节点的 nodeName 始终是 #text    文档节点的 nodeName 始终是 #document
+// var testNodeName = document.getElementById( "testNodeName" );
+// console.log( testNodeName.nodeName );
+// console.log( testNodeName.childNodes[0].nodeName);
+// console.log( testNodeName.getAttributeNode( "class" ).nodeName );
+// console.log( document.nodeName );
+// // 3、nodeValue属性  元素节点的 nodeValue 是 undefined 或 null，文本节点的 nodeValue 是文本本身，属性节点的 nodeValue 是属性值
+// console.log( testNodeName.nodeValue );
+// console.log( testNodeName.childNodes[0].nodeValue);
+// console.log( testNodeName.getAttributeNode( "class" ).nodeValue );
+// console.log( document.nodeValue );
+// // 4、nodeType属性
+// console.log( testNodeName.nodeType );
+// console.log( testNodeName.childNodes[0].nodeType);
+// console.log( testNodeName.getAttributeNode( "class" ).nodeType );
+// console.log( document.nodeType );
  
 
 // for( key in test ) {
