@@ -88,22 +88,22 @@
 // list.removeChild( li );
 // console.log( list.childNodes )
 
-// // 父节点 ： parentNode IE7+
-// var subNode = document.getElementById( "sub-node" );
-// var createText2 = document.createTextNode( "this is value of parentNode and adds by DOM operating" );
-// // 父节点添加文本子节点 IE7+
-// subNode.parentNode.appendChild( createText2 );
-// // 创建类名属性 IE7+
-// var createAttr2 = document.createAttribute( "class" );
-// // 属性赋值 IE7+
-// createAttr2.value = "attrValue";
-// // 父节点添加属性 IE7+
-// subNode.parentNode.setAttributeNode( createAttr2 );
+// 父节点 ： parentNode IE7+
+var subNode = document.getElementById( "sub-node" );
+var createText2 = document.createTextNode( "this is value of parentNode and adds by DOM operating" );
+// 父节点添加文本子节点 IE7+
+subNode.parentNode.appendChild( createText2 );
+// 创建类名属性 IE7+
+var createAttr2 = document.createAttribute( "class" );
+// 属性赋值 IE7+
+createAttr2.value = "attrValue";
+// 父节点添加属性 IE7+
+subNode.parentNode.setAttributeNode( createAttr2 );
 
 
 
 
-
+sss
 // for( key in test ) {
 //     key.innerHTML = "999";
 //     console.log( key )
