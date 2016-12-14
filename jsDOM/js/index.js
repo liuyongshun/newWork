@@ -52,7 +52,7 @@
 // console.log( name )  //返回[object NodeList]
 
 
-//=================================================================DOM操作 节点及操作。============================================================================
+//=================================================================HTML DOM操作（方法） 节点及操作。============================================================================
 
 // // 一、创建节点   这里值创造了一个p只能添加到一个标签内。IE5+。
 // // 1、创建元素  IE7+
@@ -114,6 +114,28 @@
 // } )
 
 
+//=================================================================HTML DOM属性 及应用============================================================================
+
+// 1、innerHTML属性
+var testHTML = document.getElementById( "test-innerHTML" );
+testHTML.innerHTML = "innerHTML text";
+testHTML.innerHTML = "<p>increase tag as childNode</p>";
+// 2、nodeName属性nodeName 是只读的，元素节点的 nodeName 与标签名相同，属性节点的 nodeName 与属性名相同，文本节点的 nodeName 始终是 #text    文档节点的 nodeName 始终是 #document
+var testNodeName = document.getElementById( "testNodeName" );
+console.log( testNodeName.nodeName );
+console.log( testNodeName.childNodes[0].nodeName);
+console.log( testNodeName.getAttributeNode( "class" ).nodeName );
+console.log( document.nodeName );
+// 3、nodeValue属性  元素节点的 nodeValue 是 undefined 或 null，文本节点的 nodeValue 是文本本身，属性节点的 nodeValue 是属性值
+console.log( testNodeName.nodeValue );
+console.log( testNodeName.childNodes[0].nodeValue);
+console.log( testNodeName.getAttributeNode( "class" ).nodeValue );
+console.log( document.nodeValue );
+// 4、nodeType属性
+console.log( testNodeName.nodeType );
+console.log( testNodeName.childNodes[0].nodeType);
+console.log( testNodeName.getAttributeNode( "class" ).nodeType );
+console.log( document.nodeType );
  
 
 // for( key in test ) {
