@@ -22,6 +22,14 @@
 
 // 注意：除了使用DOM一致性检测外还需同时使用 能力检测。
 
+// =================================================能力检测=============================================
+// if(document.getElementById){
+// 	console.log("support")
+// } else {
+// 	console.log("not support")
+// }
+
+
 // =============================================================================选择标签方式==============================================================================
 
 //jQuery根据样式选择器查找元素的终极方式是 先用getElementsByTagName(*)（所以说原生js比jquery快）获取所有DOM元素，然后根据样式选择器对所有DOM元素进行筛选。
@@ -81,8 +89,21 @@
 // // 1、创建元素  IE7+
 // var elements = document.createElement( "p" );  
 
+// 在 IE 中可以以另一种方式使用 createElement() ， 即为这个方法传入完整的元素标签， 也可以包
+// 含属性，如下面的例子所示。
+// var div = document.createElement("<div id=\"myNewDiv\" class=\"box\"></div >");
+// 这种方式有助于避开在 IE7 及更早版本中动态创建元素的某些问题。
+// 不能设置动态创建的 <iframe> 元素的 name 特性。
+// 不能通过表单的 reset() 方法重设动态创建的 <input> 元素。
+// 动态创建的 type 特性值为 "reset" 的 <buttou> 元素重设不了表单。
+// 动态创建的一批 name 相同的单选按钮彼此毫无关系。 name 值相同的一组单选按钮本来应该用于表示同一选项的不同值，但动态创建的一批这种单选按钮之间却没有这种关系。
+
 // // 2、创建文本  IE7+
-// var createText = document.createTextNode( "这是创建的文本节点" );
+// var createText = document.createTextNode( "这是创建的文本节点" );  //访问文本节点.data。
+// split 分割文本节点
+// console.log(document.getElementById("split").firstChild.splitText(5));
+// console.log(document.getElementById("split").firstChild.nodeValue);
+// console.log(document.getElementById("split").firstChild.data);
 
 // // 3、创建属性本身  createAttribute()方法用于创建一个指定名称的属性，并返回Attr 对象属性。  IE7+
 // var createAttr = document.createAttribute( "class" );
@@ -141,7 +162,13 @@
 // var clone = myList.cloneNode(true);  //深复制，复制所有子节点树
 // var cloneFalse = myList.cloneNode(false); // 浅复制，不复制子节点   
 // alert(cloneFalse.childNodes.length); // 0
-// alert(clone.childNodes.length); //3（IE < 9）或 7（其他浏览器）差异主要是因为 IE8 及更早版本与其他浏览器处理空白字符的方式不一样。IE9 之前的版本不会为空白符创建节点。
+// alert(clone.childNodes.length); //3（IE < 9）或 7（其他浏览器）差异主要是因为 IE8 及更早版本与其他浏览器处理空白字符的方式不一样。IE9 之前的版本不会为空白符创建节点。包括 3 个 <li> 元素和 4 个文本节点（表示 <li> 元素之间的空白符） 。如果将元素间的空白符删除，那么所有浏览器都会返回相同数目的子节点。
+
+// 14、注释节点 
+// var commemt = document.getElementById("myComment");
+// console.log(commemt.firstChild.data); //
+ // var commemts = document.createComment("dfsfsfsf");
+ // console.log(commemts)
 // ========================================================other operate for node ===========================================================================
 
 // // 1、父节点 ： parentNode IE7+
@@ -221,7 +248,7 @@
 
 
 
-// ==========================================================DOCUMENT =====================================================================================
+// ==========================================================  DOCUMENT =====================================================================================
 // var html = document.documentElement; //取得对<html>的引用
 // alert(html === document.childNodes[1]); //true
 // alert(html === document.lastChild);   //true
@@ -257,3 +284,8 @@
 //     console.log( index )
 //     console.log( test )
 // }, this);
+
+// parse解析
+console.log(JSON.parse('{"name":"liu"}'));
+// serialize序列化
+console.log(JSON.stringify({name:"json"}));
