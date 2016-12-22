@@ -50,14 +50,16 @@
 
 
 // ==============really start==========================
-var arr = [
-	"hello",
-	"nice",
-	"to",
-	"meat",
-	"you"
-]
+// var arr = [
+// 	"hello",
+// 	"nice",
+// 	"to",
+// 	"meat",
+// 	"you"
+// ]
 var express = require('express'),
+	// 我们在模块名称前加了前缀 ./ 。这是告诉 Node，它不应该到 node_modules 目录中查找这个模块，如果我们忽略了这个前缀就会导致失败。默认去node_modules找。
+	getArrsModule = require('./lib/arr.js'),
     app = express();
 var handlebars = require('express3-handlebars').create({ defaultLayout:'main' }); 
 app.engine('handlebars', handlebars.engine);
@@ -73,9 +75,9 @@ app.get('/', function(req, res) {
 });
 // get请求，请求文件about.handlebars
 app.get('/about', function(req, res) {
-	var arrDate = Math.floor(Math.random() * 4);
-	// render需要给html传递对象格式的数据。
-	res.render('about',{data: arr[arrDate]});
+	// var arrDate = Math.floor(Math.random() * 4);
+	// render需要给html传递对象格式的数据。引用自定义的模块，要通过调用arr.js模块中getArrs方法来实现(该方法返回了一个值)。
+	res.render('about',{data: getArrsModule.getArrs()});
 });
 // 404 catch-all 处理器（中间件）
 app.use(function(req, res, next){

@@ -6,3 +6,14 @@
 	npm install -g grunt-cli
 3. express3-handlebars 视图模版框架
     npm install --save express3-handlebars
+
+
+# 二、需要知道
+
+- 存放需要启动的js文件的位置为根目录。本例子就是one文件夹，index.js是启动js。
+
+- lib 存放自己的拓展node模块。
+
+- views  存放视图引擎文件。
+
+- public  存放静态文件。

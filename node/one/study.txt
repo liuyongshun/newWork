@@ -1,0 +1,42 @@
+一、
+package.json 文件有双重作用：描述项目和列出依赖项。现在去看看你的 package.json 文件，你应该能看到：
+{
+"dependencies": {
+"express": "^4.0.0",
+"express3-handlebars": "^0.5.0"
+}
+}
+现在我们的 package.json 文件里只有与依赖项相关的信息。注意包版本号之前的插入符（^） ，这表明在下一个主要版本号之前，所有以指定版本号开始的版本都能用。
+
+二、
+因为 package.json 文件中列出了所有的依赖项，所以说 node_modules 目录实际上是个衍
+生品。这就是说，如果你把它删了，要让项目重新恢复工作，只需运行 npm install ，它
+便会重建这个目录，并把所有必需的依赖项全放进去。
+
+注意：这就可以考虑用.gitignore忽略掉node_modules了。只保留package.json。通过npm install 回复即可。
+
+三、
+存放需要启动的js文件的位置为根目录。本例子就是one文件夹，index.js是启动js。
+lib 存放自己的拓展node模块。
+views  存放视图引擎文件。
+public  存放静态文件。
+
+注意：require 是一个用来引入模块的 Node 函数。Node 默认会在目录node_modules（这应该不足为奇，在 node_modules 目录下有个 express 目录）中寻找这些模块。
+
+我们创建一个用来保存模块的目录。名字随意，但一般都称为 lib（library 的缩写） 。
+在这个目录下创建一个 fortune.js 文件：
+var fortuneCookies = [
+"Conquer your fears or they will conquer you.",
+"Rivers need springs.",
+"Do not fear what you don't know.",
+"You will have a pleasant surprise.",
+"Whenever possible, keep it simple.",
+];
+exports.getFortune = function() {
+var idx = Math.floor(Math.random() * fortuneCookies.length);
+return fortuneCookies[idx];
+};
+这里要特别注意全局变量输出的用法。如果你想让一个东西在模块外可见，必须把它加到exports 上。在这个例子中，在模块外可以访问到函数 getFortune ，但数组 fortuneCookies是完全隐藏起来的。
+在启动用的js中输入下面，代码引入自己的模块。
+var fortune = require('./lib/fortune.js');
+我们在模块名称前加了前缀 ./ 。这是告诉 Node，它不应该到 node_modules 目录中查找这个模块，如果我们忽略了这个前缀就会导致失败。 这样就可以调用自己模块内的任何定义的方法了。
