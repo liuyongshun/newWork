@@ -1,0 +1,8 @@
+# 一、用到的东西。
+    
+1. express  web 应用开发框架
+    npm install --save express
+2. grunt  自动构建工具
+	npm install -g grunt-cli
+3. express3-handlebars 视图模版框架
+    npm install --save express3-handlebars
