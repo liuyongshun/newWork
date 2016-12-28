@@ -1,0 +1,22 @@
+{
+  "name": "liu",
+  "version": "1.0.0",
+  "description": "practice",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "liu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "two"
+  },
+  "keywords": [
+    "key"
+  ],
+  "author": "liuyongshun",
+  "license": "ISC"
+}
