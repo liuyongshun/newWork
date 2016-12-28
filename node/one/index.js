@@ -70,7 +70,7 @@ var arrIn = [
 	"to",
 	"meat",
 	"you"
-]
+];
 
 // ===================package lead in====================
 var express = require('express'),
