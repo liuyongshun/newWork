@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsDOM-operate</title>
+</head>
+<body>
+<script>
+function moveselect(obj,target,all){
+if (!all) all=0
+if (obj!="[object]") obj=eval("document.all."+obj)
+target=eval("document.all."+target)
+if (all==0)
+{
+   while (obj.selectedIndex>-1){
+   //alert(obj.selectedIndex)
+   mot=obj.options[obj.selectedIndex].text
+   mov=obj.options[obj.selectedIndex].value
+   obj.remove(obj.selectedIndex)
+   var newoption=document.createElement("OPTION");
+   newoption.text=mot
+   newoption.value=mov
+   target.add(newoption)
+   }
+}
+else
+{
+  //alert(obj.options.length)
+  for (i=0;i<obj.length;i++)
+   {
+   mot=obj.options.text
+   mov=obj.options.value
+   var newoption=document.createElement("OPTION");
+   newoption.text=mot
+   newoption.value=mov
+   target.add(newoption)
+   }
+obj.options.length=0
+ 
+}
+ 
+}
+</script>
+<table border="1" width="373" id="table3" bordercolor="#000000" bgcolor="#FFFFFF" style="border-collapse: collapse" cellspacing="3" cellpadding="0" class=bd>
+  <tr>
+    <td>
+      <table border="1" width="100%" id="table4" style="border-collapse: collapse" bordercolor="#808080" cellpadding="2" bgcolor="#EDF3F3" cellspacing="0">
+        <tr>
+          <td width="117" class=song_black_14 align="right">
+            <p align="left"> <font size="2">111</font>
+                <select size="14" name="D1" ondblclick="moveselect(this,'D2')" multiple style="width:140px">
+                  <option value="AAA">AAA</option>
+                  <option value="SSS">SSS</option>
+                  <option value="DDD">DDD</option>
+                </select>
+          </td>
+          <td width="117" class=song_black_14 align="right">           
+            <p align="center">
+              <input type="button" value="&lt;" name="B5" onclick="moveselect('D2','D1')">
+            <p align="center">
+              <input type="button" value="&gt;" name="B6" onclick="moveselect('D1','D2')">
+          </td>
+          <td width="117" class=song_black_14 align="right">
+            <p align="left"> <font size="2">222</font>
+                <select size="14" name="D2" ondblclick="moveselect(this,'D1')" multiple style="width:140px">
+                  <option value="ZZZ">ZZZ</option>
+                  <option value="XXX">XXX</option>
+                </select>
+          </td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

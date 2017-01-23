@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+}
+.clearfix:after {
+    display: table;
+    clear: both;
+    content: "020";
+    visibility: hidden;
+    height: 0;
+}
+.top {
+    width: 100%;
+    height: 211px;
+    background-color: green;
+}
+.clearfix {
+    *zoom: 1;
+}
+.in1 {
+    width: 200px;
+    float: left;
+    height: 200px;
+    background-color: red;
+}
+.in2 {
+    margin-left: 200px;
+    width: 100%;
+    height: 400px;
+    background-color: blue;
+}            
+.next {
+    border: 1px solid blue;
+}

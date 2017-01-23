@@ -1,0 +1,36 @@
+*{padding:0px; margin:0px;}
+a, 
+a:link, 
+a:hover, 
+a:visited {
+	text-decoration:none;
+}
+.side_nav {
+    position: fixed;
+	top: 200px;
+    right: 15%;
+	background-color: orange;
+}
+.side_nav a {
+    display: block;
+    width: 42px;
+    height:38px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 18px;
+    padding-top: 4px;
+    border-bottom: 1px solid #828181;
+} 
+.side_nav a:hover {
+    background: #fd6600;
+    text-decoration: none;
+}
+.part {
+	width: 50%;
+	height: 6000px;
+	background-color: gold;
+}
+.fix_bg_color {
+	background-color: red;
+}

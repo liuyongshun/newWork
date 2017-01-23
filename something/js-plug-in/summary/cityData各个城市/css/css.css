@@ -1,0 +1,36 @@
+
+a, a:link, a:hover, a:visited{ text-decoration:none}
+.y_terrace_city_list span{
+	float: left;
+	font-size: 14px;
+	color: #545454;
+	line-height: 25px;
+	display: block;
+	padding-right: 15px;
+}
+.y_terrace_city_list span a{
+	float: left;
+	font-size: 14px;
+	color: #545454;
+	line-height: 25px;
+	display: block;
+	padding: 0;
+	padding-right: 15px;
+}
+.y_terrace_city_list a{
+	float: left;
+	color: #0060c6;
+	line-height: 28px;
+	display: block;
+	padding: 0px 8px;
+}
+.y_terrace_city_list a:hover{
+	text-decoration: underline
+}
+.y_terrace_city_all td{
+	padding-bottom: 10px;
+}
+.y_terrace_city_list .y_terrace_city_all td span{
+	line-height: 24px;
+	padding-right: 0px;
+}

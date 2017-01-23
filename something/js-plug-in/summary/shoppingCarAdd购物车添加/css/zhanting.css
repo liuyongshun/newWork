@@ -1,0 +1,5 @@
+@charset "utf-8";
+*{margin:0; padding:0;}
+.b_num input{ width:21px; height:22px; background:#f2f2f2; border:none; float:left; color:#767676; line-height:22px}
+.b_num{ border:1px solid #ddd; width:89px; height:22px; overflow:hidden; margin:0 auto 1px}
+.b_num .text_box{ width:45px; text-align:center; background:#fff; border-left:1px solid #ddd; border-right:1px solid #ddd}

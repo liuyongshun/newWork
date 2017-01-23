@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>freecss</title>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 40px;
+/*			border-left: 1px dotted #666;*/
+		}
+		
+		.cssBox {
+			width: 400px;
+			float: left;
+		}
+		
+		.bigBox {
+			width: 810px;
+			margin: 50px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="bigBox">
+		<div class="cssBox">
+			<div class="freecss bor2sol_FF9966">全边框实线----bor2sol_FF9966</div>
+			<div class="freecss mt20 bor2das_FF9966">全边框虚线----bor2das_FF9966</div>
+			<div class="freecss mt20 bor2dot_FF9966">全边框点线-----bor2dot_FF9966</div>
+			<div class="freecss mt20 bl2sol_CC3300">左边框----bl2sol_CC3300</div>
+			<div class="freecss mt20 br2sol_CC3300">右边框----br2sol_CC3300</div>
+			<div class="freecss mt20 bt2sol_CC3300">上边框----bt2sol_CC3300</div>
+			<div class="freecss mt20 bb2sol_CC3300">下边框----bb2sol_CC3300</div>
+			<div class="freecss mt20 bgcolor_FF9966">背景颜色----bgcolor_FF9966</div>
+			<div class="freecss mt20 bor2das_FF9966">上外边距----mt20</div>
+			<div class="freecss mb20 bor2das_FF9966">下外边距----mt20</div>
+			<div class="freecss ml20 bor2das_FF9966">左外边距----mt20</div>
+			<div class="freecss mr20 bor2das_FF9966">右外边距----mt20</div>
+			<div class="freecss mg20 bor2das_FF9966">全部边距----mg20</div>
+			<div class="freecss bottom bor2sol_FF9966">定位----bottom20</div>
+			<div class="freecss mt20 brad10 bor2sol_FF9966">圆角弧度----brad10</div>
+			<div class="freecss mt20 brp50 bor2sol_FF9966">圆角弧度----brp10</div>
+		</div>
+		<div class="cssBox">
+			<div class="freecss mt20 btlr50 bor2sol_FF9966">左上弧度----btlr10</div>
+			<div class="freecss mt20 btrr50 bor2sol_FF9966">右上弧度----btrr10</div>
+			<div class="freecss mt20 bblr50 bor2sol_FF9966">左下弧度----bblr10</div>
+			<div class="freecss mt20 bbrr50 bor2sol_FF9966">左上弧度----bbrr10</div>
+			<div class="freecss mt20 bor2sol_FF9966 color_FF9966">字体颜色----bbrr10</div>
+			<div class="freecss mt20 fz30 color_FF9966">字号----fz30</div>
+			<div class="freecss mt20 fz20 color_FF9966 height40 lheight40">字体颜色----bbrr10</div>
+			<div class="freecss mt20 left60 color_FF9966">定位----left30</div>
+			<div class="freecss mt20 bor2sol_CC3300 pdl30">左内边距----pdl30</div>
+			<div class="freecss mt20 bor2sol_CC3300 pdr30">右内边距----pdl30</div>
+			<div class="freecss mt20 bor2sol_CC3300 pdt30">上内边距----pdl30</div>
+			<div class="freecss mt20 bor2sol_CC3300 pdb30">下内边距----pdl30</div>
+			<div class="freecss mt20 bor2sol_CC3300 pd30">全内边距----pd30</div>
+			<div class="freecss mt20 bor2sol_CC3300 width100">宽度----width100</div>
+		</div>
+	</div>
+	<script src="jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="freecss.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			startCSS();
+		})
+	</script>
+</body>
+</html>

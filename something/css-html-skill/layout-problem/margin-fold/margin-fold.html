@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.parent {
+			height: 100px;
+			width: 200px;
+			/*二、*/
+			/*四种方式避免margin折叠*/
+			/*1设置padding-top*/
+			/*padding-top: 1px;*/
+			/*2设置border-to*/
+			/*border-top: 1px solid yellow;*/
+			/*3清楚浮动*/
+			/*overflow: hidden;*/
+			background-color: red;
+		}
+		.one {
+			/*该位置加不起作用，但是下边*/
+			/*padding-top: 1px;*/
+			margin: 10px;
+			background-color: green;
+		}
+		.two {
+			margin: 10px;
+			background-color: blue;			
+		}
+
+
+	</style>
+</head>
+<body>
+	<!-- 一.自身 margin-bottom 和 margin-top 相邻，只能是自身内容为空，垂直方向上 border、padding 为 0。加了border-top;就发生改变了 -->
+	<div style="border:1px solid red; width:100px;">
+	    <div style="/*border-top:1px solid black;*/margin-top: 100px;margin-bottom: 50px;"></div>
+	</div>
+
+	<!-- 
+		二、
+		margin折叠条件：（两个或多个毗邻的普通流中的块元素垂直方向上的 margin 会折叠）
+	    1.这两个或多个外边距没有被非空内容、padding、border 或 clear 分隔开。
+	    2.这些 margin 都处于普通流中2。
+	 -->
+	 <!-- sss所处位置不同，one的margin效果不同 -->
+	<div class="parent">
+		<div class="one">sss</div>
+		<div class="two">fff</div>
+		<!-- 4.非空内容 -->
+		sss
+	</div>
+	
+	<!-- 三、例如 TD TR TH 等，margin 是不适用的。 并且，对于行内非替换元素（例如 SPAN），垂直方向的 margin 不起作用(浮动后起作用)。 -->
+	<div style="border:1px solid red;">
+	    <span style="margin:100px; background:gray;">ddd</span>
+	</div>	
+
+
+	<!-- 四、注意一点，在没有被分隔开的情况下，一个元素的 margin-top 会和它普通流中的第一个子元素(非浮动元素等)的 margin-top 相邻； 只有在一个元素的 height 是 "auto" 的情况下(默认)，它的 margin-bottom 才会和它普通流中的最后一个子元素(非浮动元素等)的 margin-bottom 相邻。 -->
+	<!-- 下边第二，三，4层div（从外到内计算），的margin-top都是以最内层的为准，而第二层的div因为设有高度，他的margin-bottom不和内层的两个div的margin-bottom对齐。 -->
+	<div style="border:1px solid red; width:100px;">
+	    <div style="margin:50px 0; background-color:green; height:50px; width:50px;">
+	       <div style="margin:20px 0;">
+	           <div style="margin:100px 0;">B</div>
+	       </div>
+	    </div>
+	</div>
+
+
+
+	 <!-- 五、参与折叠的 margin 都是负值当 margin 都是负值的时候，取的是其中绝对值较大的，然后，从 0 位置，负向位移。 -->
+	<div style="height:100px; margin-bottom:-75px; width:100px; background-color: red;">A</div>
+	<div style="height:100px; margin-top:-50px; margin-left:50px; width:100px; background-color: green;">B</div>
+
+	<!-- 六、有正有负，先取出（是取出不是取）负 margin 中绝对值中最大的，然后，和正 margin 值中最大的 margin 相加。下面的例子最终的 margin 应该是 100 + (-50) = 50px。 -->
+	<div style="height:50px; margin-bottom:-50px; width:50px; background-color: red;">A</div>
+	<div style="height:50px; margin-top:100px; width:50px; background-color: green;">B</div>
+
+	<!-- 
+	七、
+	不能分别算两个父元素的margin在折叠。
+	A 和 B 之间的 margin 折叠产生的 margin，是6个相邻 margin 折叠的结果。将其 margin 值分为两组：
+    正值：50px，150px，200px
+    负值：-60px，-100px，-120px
+	根据有正有负时的计算规则，正值的最大值为 200px，负值中绝对值最大的是 -120px，所以，最终折叠后的 margin 应该是 200 + (-120) = 80px。 
+	-->
+	<div style="margin:50px 0; background-color:green; width:50px;">
+	    <div style="margin:-60px 0;">
+	           <div style="margin:150px 0;">A</div>
+	    </div>
+	</div>
+	<div style="margin:-100px 0; background-color:green; width:50px;">
+	    <div style="margin:-120px 0;">
+	           <div style="margin:200px 0;">B</div>
+	    </div>
+	</div>
+	<!-- 八、浮动元素、inline-block 元素、绝对定位元素的 margin 不会和垂直方向上其他元素的 margin 折叠 -->
+
+
+</body>
+</html>

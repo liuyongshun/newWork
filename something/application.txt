@@ -1,0 +1,19 @@
+1.有道词典
+2.百度网盘
+3.sublime3 （package control [ctrl + shift +p]）+ jshint(alt + j 运行） + convertToUTF-8 + emmet
+4.vscode （jshint）
+5.Axure 原型图
+6.git + github (.gitignore) + 命令。
+7.livereload and boswer-sync 可视化开发。
+8.node.js 
+9.IIS 搭配。
+10. Pxcook像素大厨，标记尺寸。
+11.cutterman 快速切图。
+12.windows 环境变量，（就是添加bin的路径问题。win7用分号分开）
+13. 略缩图批量制作 + 批量重命名 + 批量压缩文件
+14. hosts 替换C:\Windows\System32\drivers\etc （将一些常用的网址域名与其对应的IP地址建立一个关联“数据库”，当用户在浏览器中输入一个需要登录的网址时，系统会首先自动从Hosts文件中寻找对应的IP地址，一旦找到，系统会立即打开对应网页，如果没有找到，则系统会再将网址提交DNS域名解析服务器进行IP地址的解析。）
+15.x-mind 思维导图，写结构性文档。
+16.同步云的使用。win10的oneDrives
+17.snipaste切图工具
+18.apache服务器，htdocs文件夹下放静态页，可以局域网输入IP访问。
+19. fiddler  抓包工具

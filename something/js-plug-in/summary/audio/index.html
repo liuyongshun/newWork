@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="js/audio.min.js"></script>        
+        <script>
+            audiojs.events.ready(function() {
+                audiojs.createAll();
+
+                var aAudiojs=getByClass(document, 'audiojs');
+                for(var i=0; i<aAudiojs.length; i++){
+                    var aAudio=aAudiojs[i].getElementsByTagName('audio')[0];
+                    var oSpan=aAudiojs[i].getElementsByTagName('span')[0];
+                    var fxg='/';
+                    var url=aAudio.src;
+                    url=url.replace(/\\/g,fxg);
+                    url=url.split("/");
+                    this.playname=url[url.length-1];
+                    oSpan.innerHTML=decodeURI(this.playname);
+                }
+            });
+        </script>        
+    </head>
+
+    <body>
+        <div class="audiojs  " classname="audiojs" id="audiojs_wrapper0">
+            <div class="audiojs " classname="audiojs" id="audiojs_wrapper0">
+                <audio src="http://www.17sucai.com/preview/23354/2014-10-15/audiojs—开关声音/audiojs/汪苏泷&amp;By2-有点甜.mp3" preload="auto"></audio>          
+                <div class="headset"></div>             
+                <div class="playname" id="playname"></div>             
+                <div class="play-pause">             
+                    <p class="play"></p>             
+                    <p class="pause"></p>             
+                    <p class="loading"></p>             
+                    <p class="error"></p>           
+                </div>           
+                <div class="scrubber">             
+                    <div class="progress" style="width: 153px;"></div>             
+                    <div class="loaded" style="width: 400.308px;"></div>           
+                </div>           
+                <div class="time">             
+                    <em class="played">01:21</em>/<strong class="duration">03:55</strong>           
+                </div>           
+                <div class="volume"></div>           
+                <div class="error-message"></div>
+            </div>          
+            <div class="headset"></div>             
+            <div class="playname" id="playname"></div>             
+            <div class="play-pause">             
+                <p class="play"></p>             
+                <p class="pause"></p>             
+                <p class="loading"></p>             
+                <p class="error"></p>           
+            </div>           
+            <div class="scrubber">             
+                <div class="progress" style="width: 6.22797px;"></div>             
+                <div class="loaded" style="width: 148.624px;"></div>           
+            </div>           
+            <div class="time">             
+                <em class="played">00:03</em>/<strong class="duration">03:55</strong>           
+            </div>           
+            <div class="volume"></div>          
+            <div class="error-message"></div>
+        </div>                             
+    </body>
+</html>

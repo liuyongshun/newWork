@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--tab键测试-->    
+    <style>
+        /* 方法一 ：IE9以上和firefox,chrome,safari等方式。*/
+        a {
+            outline: none;
+        }
+        /*方法二：配合下边小段js应用killFocus()，该方法保留了键盘事件（即用tab可以得到焦点框,其他均不保留） */
+        *[hidefocus] {
+            outline:none;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--测试a标签-->
+    <ul>
+        <li><a href="javascript:;" onclick="killFocus(this)">呵呵呵呵1</a></li>
+        <!--方法三： IE8以下用 hidefocus="true"去掉-->
+        <li><a href="javascript:;" hidefocus="true">呵呵呵呵2</a></li>
+        <!--方法四：全部可以用，但是语义化不好，产生一个问题。（用tab键切换焦点时）该处后面的选项将无法获取焦点-->
+        <li><a href="javascript:;" onFocus="this.blur()" >呵呵呵呵3</a></li>
+        <li><a href="javascript:;">呵呵呵呵4</a></li>
+        <!--把 呵呵呵呵3 去掉onFocus="this.blur()"可以继续下走-->
+        <li><input type="text" value="fdfe"></li>
+    </ul>
+
+
+    <!--方法二：-->
+    <script>
+        //该处代码可以去掉鼠标下出现虚框的情况，保留键盘tab键的框。
+        function killFocus(obj) {
+            obj.onmousedown = function() {
+                this.blur(); // most browsers
+                this.hideFocus = true; // ie
+            }
+            obj.onmouseout = obj.onmouseup = function() {
+                this.blur(); // most browsers
+                this.hideFocus = false; // ie
+            }
+            console.log( 2 )
+        }        
+        
+    </script>
+</body>
+</html>

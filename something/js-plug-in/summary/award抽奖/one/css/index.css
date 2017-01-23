@@ -1,0 +1,25 @@
+#lottery {
+    width: 300px;
+    height: 300px;
+}
+.lottery-unit,
+.start {
+    float: left;
+}
+.lottery-unit {
+    width: 100px;
+    height: 100px;    
+    background: green;
+}
+.start {
+    width: 96px;
+    height: 96px;
+    border: 2px solid #b0641a;
+}
+.start {
+    text-decoration: none;
+    background-size: 80% 80%;        
+}
+.active {
+    background-color: red;
+}

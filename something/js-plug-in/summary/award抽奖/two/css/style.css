@@ -1,0 +1,48 @@
+/*抽奖*/
+#lottery {
+    width: 100%;
+    height: 23.67rem;
+    background: url(../images/disk.png) no-repeat center top;
+    background-size: 100% 100%;
+}
+
+.box_award {
+    display: inline-block;
+    width: 77.5%;
+    height: 19.75rem;
+    margin: 1.85rem 0 0 11.94%; 
+    background-color: #feae2f;   
+    overflow: hidden;
+}
+.lottery-unit,
+.start {
+    float: left;
+    width: 32.73%;
+    height: 33.13%;
+}
+.lottery-unit {
+    background: url(../images/award.png) no-repeat center center;    
+    background-size: 80% 80%;    
+}
+.start {
+    border: 2px solid #b0641a;
+}
+/*设置边框*/
+.lottery-unit-1,
+.lottery-unit-5 {
+    border-left: 2px solid #b0641a;
+    border-right: 2px solid #b0641a;
+}
+.lottery-unit-7,
+.lottery-unit-3 {
+    border-bottom: 2px solid #b0641a;
+    border-top: 2px solid #b0641a;
+}
+.start {
+    text-decoration: none;
+    background: #d5d5d5 url(../images/can.png) no-repeat center center;    
+    background-size: 80% 80%;    
+}
+.box_award .active {
+    background-color: #7f3f14;
+}

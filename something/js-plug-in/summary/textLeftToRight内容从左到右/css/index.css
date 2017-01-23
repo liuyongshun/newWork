@@ -1,0 +1,29 @@
+/*类名can-select和box与js无关，样式不影响功能实现*/
+ul,li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.can-select,
+.target {
+    width: 90px;
+    height: 152px;
+    border: 1px solid #ddd;
+    line-height: 30px;
+    cursor: pointer;
+}
+.box {
+    margin-top: 20px;
+}
+.target {
+    margin-top: 20px;
+}
+.select {
+    padding-left: 5px;    
+}
+.focus {
+    background-color: dodgerblue;
+}
+.right {
+    background-color: #ddd;
+}

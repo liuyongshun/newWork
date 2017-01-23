@@ -1,0 +1,39 @@
+							<div class="clone_div">
+                            	<ul class="main_ul">
+                                	<li>分类</li>
+                                    <li>产品名称</li>
+                                    <li>物理指标</li>
+                                    <li>化学指标</li>
+                                    <li>实际生产力量</li>
+                                </ul>
+                                
+                            	<ul class="show_ul">
+                                	<li>点击我删除</li>
+                                </ul>
+                            </div>
+
+
+
+                  <script type="text/javascript">
+				  	  $(function(){
+						$(".main_ul li").click(function(e) {
+                            var clone=$(this).clone();
+							$(".show_ul").append(clone)
+                        }); 
+						
+						$(".show_ul li").live('click', function () {
+						    $(this).remove("li");
+						});
+					  
+					  })
+                  </script>        
+
+
+
+
+CSS:
+/*左侧内容复制到右侧*/
+.clone_div{ overflow:hidden}
+.main_ul{ float:left; width:150px; border:1px solid #ddd;min-height:200px;}
+.show_ul{float:left; width:150px; border:1px solid #ddd; min-height:200px; margin-left:20px}
+.clone_div ul li{ border-bottom:1px solid #ddd; height:25px; line-height:25px; padding-left:5px}

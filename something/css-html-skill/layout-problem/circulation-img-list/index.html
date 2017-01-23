@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link  rel="stylesheet" href="css/css.css">
+        <title></title>
+    </head>
+    <body>       
+        <!-- 
+        这种图片列表，后端要循环出来，所以要保证li结构一样，所以每个li的margin（或其他）都要一样，同时分别左右对齐上面的标题。
+        因此设置了，l_box当超出时隐藏。这种方式必须指定li的宽高，不然布局就会出问题，
+        -->
+        <div class="center">
+            <ul class="l_tit">
+                <li class="l_com l_wh_com"><div class="l_rect l_rg"></div></li>
+                <li class="l_only l_wh_only"><span class="l_txt">公司地址</span></li>
+                <li class="l_com l_wh_com"><div class="l_rect l_lf"></div></li>
+            </ul>        
+            <div class="l_box">
+                <ul class="l_show_list clearfix">
+                    <li><img src="images/show_0.png" alt=""></li>
+                    <li><img src="images/show_1.png" alt=""></li>
+                    <li><img src="images/show_2.png" alt=""></li>
+                    <li><img src="images/show_3.png" alt=""></li>
+                    <li><img src="images/show_4.png" alt=""></li>
+                    <li><img src="images/show_5.png" alt=""></li>
+                    <li><img src="images/show_6.png" alt=""></li>
+                    <li><img src="images/show_7.png" alt=""></li>
+                </ul>                    
+            </div>            
+        </div>
+    </body>
+</html>
