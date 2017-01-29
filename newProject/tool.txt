@@ -1,0 +1,7 @@
+1.http://tongji.baidu.com/data/os百度统计
+2. can i use
+3.http://jsperf.com/         js性能测试。
+4.http://jsconsole.com/  手机端web调试
+5.https://developers.google.com/speed/pagespeed/insights   页面加载速度测试
+6.https://github.com/liyangready/multiple-host  host使用
+7.http://www.topve.com/color/  配色工具
