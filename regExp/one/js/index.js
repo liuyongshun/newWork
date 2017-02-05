@@ -48,7 +48,7 @@
 
 
 
-// judge email format.
+// // judge email format.
 // var checkEmail = {
 //     // judges为提交按钮，
 //     getSelect: document.getElementById( 'judges' ),
@@ -78,12 +78,12 @@
 //         } );   
 //         }
 //     }
-// }
+// };
 // checkEmail.method();
 
 
 // // ====================practice rank========================================================
-var str = "hat hot my telephone is 12202345672  10 email: liulfjs@126.com \n liuyongshun this his at" 
+var str = "hat hot my telephone is 12202345672  10 email: liulfjs@126.com \n liuyongshun this his at"; 
 // // search 括号内任意字符，为设置g时，找到ema中的任何一个都会停止。[a-z]
 // var patt = /[ema]/;
 // console.log( str.match( patt ) );
