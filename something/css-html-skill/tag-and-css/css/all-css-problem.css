@@ -1,0 +1,25 @@
+.indent_css {font:italic small-caps bold 18px/2 Simsun,arial,sans-serif;}
+/*font-style  指定文本字体样式
+font-variant  指定文本是否为小型的大写字母
+font-weight  指定文本字体的粗细
+font-size  指定文本字体尺寸
+line-height  指定文本字体的行高
+font-family  指定文本使用某个字体或字体序列. 按优先顺序排列。以逗号隔开。如果字体名称包含空格或中文，则应使用引号括起.
+使用第一种声明方式参数必须按照如上的排列顺序，且font-size和font-family是不可忽略的。*/
+
+
+.background {
+    background:url(test1.jpg) no-repeat scroll 10px 20px/50px 60px padding-box,
+           url(test1.jpg) no-repeat scroll 10px 20px/70px 90px padding-box,
+           url(test1.jpg) no-repeat scroll 10px 20px/110px 130px padding-box #aaa;    
+}
+/*background-image:url(test1.jpg),url(test2.jpg),url(test3.jpg);
+background-repeat:no-repeat;
+background-attachment:scroll;
+background-position:10px 20px;
+background-size:50px 60px,70px 90px,110px 130px;
+background-origin:content-box;
+background-clip:padding-box;
+background-color:#aaa;*/
+
+

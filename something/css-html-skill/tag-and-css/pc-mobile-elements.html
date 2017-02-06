@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <link  rel="stylesheet" href="css/index.css">
+        <link  rel="stylesheet" href="css/pc.css">
         <!--meta标签永远位于head元素内部。属性：必选content。可选name，http-equiv,scheme
         name:author/description/keywords/generator/revised/others ; http-equiv: content-type/expires/refresh/set-cookie-->
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
@@ -26,6 +25,8 @@
         常规我们要求文件名应为 apple-touch-icon.png 或 apple-touch-icon-precomposed.png，前者的命名iOS会为这个图标自动添加圆角、阴影和高亮覆盖层，后者则不会添加这些效果。
         -->
         <link rel="apple-touch-icon-precomposed" href="http://3gimg.qq.com/wap30/info/info5/img/logo_icon.png">
+        <meta content="email=no" name="format-detection" />
+        <!-- 如果你不想Android自动识别页面中的 邮件地址 -->
         <title></title>
     </head>
     <body>
@@ -34,7 +35,7 @@
         <aside>标签定义 article 标签外的内容。aside 的内容应该与附近的内容相关。</aside>
         <figure>
          标签规定独立的流内容（图像、图表、照片、代码等等）。元素的内容应该与主内容相关，同时元素的位置相对于主内容是独立的。如果被删除，则不应对文档流产生影响。(内部允许流内容即可以用别的标签)
-          <img src="img_pulpit.jpg" alt="The Pulpit Rock" width="304" height="228">
+          <img src="" alt="The Pulpit Rock" width="304" height="228">
           <figcaption>标签为figure元素定义标题。figcaption元素应该被置于figure元素的第一个或最后一个子元素的位置。</figcaption>
         </figure>         
         <header> 标签定义文档或者文档的一部分区域的页眉。header元素应该作为介绍内容或者导航链接栏的容器。在一个文档中，您可以定义多个header元素。注释：header标签不能被放在footer、address或者另一个header元素内部。</header>
@@ -63,8 +64,10 @@
         <!-- 
         =======================================下列为pc端，上列是移动端可加 =======================================
         -->
+        <a href=""><img src="css/c.jpg" width="200"></a>
+        <a href="http://www.baidu.com">等等等等等等</a>
         <h1>The title of h1</h1>
-        <abbr title="">缩写W3C 可以IE6+</abbr>
+        <abbr title="hello nice to meet 你好啊大笨蛋">缩写W3C 可以IE6+</abbr>
         <address>斜体，IE7支持，位于 <code><pre>&lt;body&gt;元素内部，则它表示该文档作者/所有者的联系信息。位于 &lt;article&gt; 元素内部，则它表示该文章作者/所有者的联系信息。</pre></code> </address>
         <blockquote cite="http://www.worldwildlife.org/who/index.html">引用IE7支持。没有段落分割用q标签</blockquote>
         <cite>标签定义作品（比如书籍、歌曲、电影、电视节目、绘画、雕塑等等）的标题。IE7支持</cite> 
@@ -74,7 +77,7 @@
         <pre>标签 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。IE7</pre>
         <small>所有主流浏览器都支持标签。IE7支持</small>
         <strong>定义语气更为强烈的强调文本。IE7支持</strong>
-        <sub>定义下标文本。</sub>
+        <p>刘勇三翻四复<sub>下表</sub></p>
         <sup>定义上标文本。</sup>
         <var>定义变量。您可以将此标签与pre及code标签配合使用。</var>
         <code>
@@ -101,6 +104,7 @@
         <b></b> 
         <p></p> 
         <form action="">
+            formmmmmmmmm
             <input type="text"> 
             <textarea name="" id="" cols="30" rows="10"></textarea>
             <label for=""></label>
@@ -111,25 +115,22 @@
         </select>
         <img src="" alt="">
         <a href=""></a> 
-        <table border="1">
-        <colgroup>
-            <col span="2" style="background-color:red">
-            <col style="background-color:yellow">
-        </colgroup>
-        <tr>
-            <th>ISBN</th>
-            <th>Title</th>
-            <th>Price</th>
-        </tr>
-        <tr>
-            <td>3476896</td>
-            <td>My first HTML</td>
-            <td>$53 a&#768;</td>
-        </tr>
+        <table>
+            <colgroup>
+                <col span="2" style="background-color:red">
+                <col style="background-color:yellow">
+            </colgroup>
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>3476896</td>
+                <td>My first HTML</td>
+                <td>$53 a&#768;</td>
+            </tr>
         </table>         
-
-
-
         <!-- 
         全局属性
         contenteditable="true"文本可编辑；
@@ -141,6 +142,20 @@
         hidden="hidden"只有IE不支持
          -->
         <div hidden="hidden">dfsf</div>
+
+
+
+
+        <!-- teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeest IE7支持  andriod iOS B不支持-->
+        <div class="box1" style="width: 60px;">
+            <div class="justfy">姓名</div>
+            <div class="justfy">姓名姓名</div>
+            <div class="justfy">姓名名</div>
+            <div class="justfy">所在地</div>
+            <div class="justfy">工作单位</div>
+        </div>
+        <button type="button">这是button</button>
+        <div class="wire"></div>
         <script src="js/index.js"></script>
     </body>
 </html>

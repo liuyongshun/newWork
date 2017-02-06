@@ -2,9 +2,9 @@
         index:-1,	//当前转动到哪个位置，起点位置
         count:0,	//总共有多少个位置
         timer:0,	//setTimeout的ID，用clearTimeout清除
-        speed:20,	//初始转动速度
+        speed:2,	//初始转动速度
         times:0,	//转动次数
-        cycle:50,	//转动基本次数：即至少需要转动多少次再进入抽奖环节
+        cycle:30,	//转动基本次数：即至少需要转动多少次再进入抽奖环节
         prize:-1,	//中奖位置
         init:function(id){
             if ($("#"+id).find(".lottery-unit").length>0) {
@@ -26,11 +26,6 @@
             };
             $(lottery).find(".lottery-unit-"+index).addClass("active");
             this.index=index;
-            return false;
-        },
-        stop:function(index){
-            this.prize=index;
-            console.log( 3 );
             return false;
         }
     };
