@@ -1,4 +1,4 @@
-/*去掉自带的margin和padding样式*/
+去掉自带的margin和padding样式*/
 blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
     margin: 0;
     padding: 0;
@@ -7,9 +7,25 @@ blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr
 body, button, input, select, textarea, optgroup {
     font: 12px/1.5 Microsoft Yahei,arial,sans-serif;
 }
-/*Webkit（chrome）浏览器中输入（文本框）或textarea的黄色焦点框和a的虚线*/
-input, button, select, textarea, a {
+/*Webkit（chrome）浏览器中输入（文本框）或textarea的黄色焦点框*/
+/**
+* 1. 修正所有浏览器中字体不继承的问题
+* 2. 修正所有浏览器中字号不继承的问题
+* 3. 修正 Firefox 3+， Safari5 和 Chrome 中外边距不同的问题
+* 4. 改善在所有浏览器下的垂直对齐方式
+*/
+input, button, select, textarea {
     outline: none;
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  vertical-align: baseline;
+  /* 4 */
+  *vertical-align: middle;
+  /* 4 */    
 }
 /*禁止文本域拉伸*/
 textarea { 
@@ -19,6 +35,10 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
     font-size: 100%;
     font-weight: normal;
+}
+/*去掉q的引号*/
+q {
+  quotes: none;
 }
 /*去掉斜体*/
 address, cite, dfn, em, var, i {
@@ -39,7 +59,7 @@ textarea {
 }
 /*去掉加粗*/
 strong, b {
-    font-weight: normal;
+    font-weight: bold;
 }
 /*去掉列表样式*/
 ol, ul {
@@ -61,6 +81,7 @@ sup {
 }
 /*去掉下划线，去掉IE10+的灰色背景（没见过）*/
 a {
+    outline: none;
     text-decoration: none;
     background-color: transparent;
 }
@@ -73,9 +94,26 @@ a:hover {
 fieldset, img {
     border: 0 none;
 }
+/*合并单元格边框*/
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+/*修复 IE 中 th 不能继承 text-align 的问题并统一左对齐*/
+th {
+  text-align: left;
+}
+/*单元格添加边框*/
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+}
+/*表头底部边框*/
+table th {
+  font-weight: inherit;
+  border-bottom-width: 2px;
+  border-bottom-color: #ccc;
 }
 /*添加下划线*/
 abbr[title] {
@@ -89,9 +127,55 @@ button::-moz-focus-inner,
   border-style: none;
   padding: 0;
 }
+/**
+* label 元素给予手型，暗示此处可点击
+*/
+label {
+  cursor: pointer;
+}
+/**
+* 1. 修正 IE 8/9 box-sizing 被设置为「content-box」的问题
+* 2. 移除 IE 8/9 中多余的内边距
+* 3. 移除 IE7 中多余的内边距(IE6 中任然存在)
+*/
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
 /*在IE10以下添加正确的隐藏。*/
 [hidden] {
   display: none;
+}
+/**
+* 1. 去除 IE6-9 和 Firefox 3 中 a 内部 img 元素默认的边框
+* 2. 修正 IE8 图片消失bug
+* 3. 防止 img 指定「height」时图片高度不能按照宽度等比缩放，导致图片变形
+    http://jsbin.com/aJoTUca/2
+* 4. 让图片支持响应式
+* 5. 去除现代浏览器图片底部的空隙
+* 6. 修复 IE7 图片缩放失真
+*/
+img {
+  border-style: none;
+  /* 1 */
+  width: auto\9;
+  /* 2 */
+  height: auto;
+  /* 3 */
+  max-width: 100%;
+  /* 4 */
+  vertical-align: top;
+  /* 5 */
+  -ms-interpolation-mode: bicubic;
+  /* 6 */
 }
 
 /*==================基础的共用型样式。====================*/
@@ -149,4 +233,36 @@ button::-moz-focus-inner,
 /*“-”中划线的确是IE6特有的hack；IE7特有的hack，一般认为是“*+”,星号和加号一起写。*/
 /*aaa{height：25px;-height:30px；*+height:31px;}  普通高度是25像素，IE6是30像素，IE7是31像素  */
 
-/**/
+/*
+* 基础布局
+* @ Name:        layout.css V1.0.0
+* @ Author:      一丝
+* @ Update:      2013-9-30 15:39:51;
+* @ Copyright:   MIT License
+*/
+/*
+*@ Name:       inline-block 组件
+*@ Author:     一丝
+*@ Update:     2013-9-29 16:05:04
+*@ Usage:      清除空隙需在外层容器加上 dib-box，dib 可单独使用
+*/
+.dib {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+.dib-box {
+  font-size: 0;
+  /* 所有浏览器 */
+  *word-spacing: -1px;
+  /* IE6/7 */
+}
+/* 去除 inline-block 的空隙 */
+.center-box {
+  font-size: 0;
+  *word-spacing: -1px;
+  /* IE6、7 */
+  height: 100%;
+  /* 继承父级高度 */
+}
