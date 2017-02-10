@@ -296,3 +296,17 @@ input[disabled] {
 
 /*“-”中划线的确是IE6特有的hack；IE7特有的hack，一般认为是“*+”,星号和加号一起写。*/
 /*aaa{height：25px;-height:30px；*+height:31px;}  普通高度是25像素，IE6是30像素，IE7是31像素  */
+
+
+/*选择器支持IE7+*/
+
+/* 相邻选择符(E+F) */ 
+p+p 
+/* 兄弟选择符(E~F) */ 
+p~p
+/* 子代选择符(E~F) */ 
+p>p
+/*属性选择器*/
+input[type="text"] 
+/*第一个子元素,（last不可用）*/
+p:first-child
