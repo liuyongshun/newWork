@@ -1,0 +1,60 @@
+.main,.main2,.main3,.main4 {
+    width: 100%;
+    height: 130px;
+    font-size: 30px;
+}
+.main {
+    background-color: #ccc;    
+}
+.main2 {
+    background-color: #ddd;
+}
+.main3 {
+    background-color: #bbb;
+}
+.main4 {
+    background-color: #333;
+}
+/*IE7及更早浏览器下子元素相对定位时父元素overflow属性的auto|hidden失效的问题 （给relative设置相对定位）*/
+.relative {
+    position: relative;/*解决失效*/ 
+    overflow:auto;
+    width:260px;
+    height:80px;
+    border:1px solid #ddd;
+}
+.p {
+   position:relative;
+    margin:0;
+}
+
+
+/*inline-block5像素问题 方法一：设置display: block;*/
+.inline-block {
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+    background-color: red;
+    /*方法二：.vertical-align 对齐top,bottom（不好用，不能完全消除）*/
+    /*vertical-align: top;*/
+}
+/*方法三：父元素设置如下*/
+.main4 {
+    font-size: 0;
+    line-height: 0;
+}
+/*方法四：父元素设置如下*/
+.main4 {
+  font-size: 0;
+  *word-spacing: -1px;
+  /* IE6、7 */
+  height: 100%;
+  /* 继承父级高度 */        
+}
+/*方法五：父元素设置如下*/
+.dib-box {
+  font-size: 0;
+  /* 所有浏览器 */
+  *word-spacing: -1px;
+  /* IE6/7 */
+}

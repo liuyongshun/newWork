@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/pc.css">
+    <link rel="stylesheet" type="text/css" href="css/test-compatibility.css">
+</head>
+<body>
+    <!-- 默认状态下，input, button, select, textarea内的字体不会继承 -->
+    <div class="main">
+        main的字体是30px;测试下面的标签的继承性input, button, select, textarea
+        <input type="" value="测试字体" name="">
+        <button>测试字体</button>
+        <select>测试字体</select>
+        <textarea>测试字体</textarea>
+    </div>
+
+    <!-- IE7及更早浏览器下子元素相对定位时父元素overflow属性的auto|hidden失效的问题 （给relative设置相对定位）-->
+    <div class="relative">
+        <p class="p">如果我是相对定位，我的父元素overflow属性设置为auto|hidden将失效。如果你使用的是IE及更早浏览器，你将可以看到这个BUG</p>
+        <p class="p">如果我是相对定位，我的父元素overflow属性设置为auto|hidden将失效。如果你使用的是IE及更早浏览器，你将可以看到这个BUG</p>
+    </div>
+
+    <!-- * 1. 修正 IE 8/9 box-sizing 被设置为「content-box」的问题 2. 移除 IE7 中多余的内边距(IE6 中任然存在) 3. 在IE10以下添加正确的隐藏。 -->
+    <div class="main2">
+        <input type="checkbox" name="" value="测试内边距">
+        <input type="radio" name="" value="测试内边距">
+        <input type="hidden" name="" value="隐藏">
+    </div>
+
+    <!-- 1. 去除 IE6-9 和 Firefox 3 中 a 内部 img 元素默认的边框 -->
+    <div class="main3">
+        <a href=""><img src="css/c.jpg" style="width: 100px;"></a>
+    </div>
+
+    <!-- inline-block的5像素问题 -->
+    <div class="main4">
+        <span class="inline-block "></span>
+        <span class="inline-block"></span>
+        <span class="inline-block"></span>
+        <span class="inline-block"></span>
+        <span class="inline-block"></span>
+        <span class="inline-block"></span>
+        <span class="inline-block"></span>
+        <span class="inline-block"></span>
+    </div>
+    <span class="rmb">&yen;</span>
+    <input type="button" disabled name="" value="测试disabled">
+
+
+
+    <!-- PC支持 andriod iOS B不支持-->
+    <div class="box1" style="width: 60px;">
+        <div class="justfy">姓名</div>
+        <div class="justfy">姓名姓名</div>
+        <div class="justfy">姓名名</div>
+        <div class="justfy">所在地</div>
+        <div class="justfy">工作单位</div>
+    </div>
+    <!-- 三条线菜单 -->
+    <div class="wire"></div>
+
+    
+
+    <!-- 使用标准的方法在页面上插入flash -->
+    <object id="flash-show" type="application/x-shockwave-flash" data="*.swf">
+        <param name="movie" value="*.swf" />
+        <param name="wmode" value="transparent" />
+        <img src="*.jpg" alt="用于不支持flash或屏蔽flash时显示" />
+    </object>    
+    <!-- 让层在flash上显示 -->
+    <param name="wmode" value="transparent" />
+</body>
+</html>
