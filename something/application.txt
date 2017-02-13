@@ -17,3 +17,4 @@
 17.snipaste切图工具
 18.apache服务器，htdocs文件夹下放静态页，可以局域网输入IP访问。
 19. fiddler  抓包工具
+20. easyBCD 双系统（ubuntu和win10）设置启动项。

@@ -20,9 +20,64 @@
         <!-- 如果你不想Android自动识别页面中的 邮件地址 -->        
         <meta content="email=no" name="format-detection" />
         <link rel="stylesheet" href="css/mobile.css">
+        <style type="text/css">
+            .ent-li {
+                /*设置弹性布局，做好兼容*/
+                display: -webkit-flex;/*new*/
+                display: -webkit-box;/*older*/
+                display: flex;/*new*/                
+                /*horizontal: 设置伸缩盒对象的子元素从左到右水平排列
+                vertical：设置伸缩盒对象的子元素从上到下纵向排列
+                inline-axis：设置伸缩盒对象的子元素沿行轴排列
+                block-axis：设置伸缩盒对象的子元素沿块轴排列*/
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction：normal; /* reverse 反向*/
+            }
+            .ent-img {
+                box-ordinal-group：3;/*设置或检索伸缩盒对象的子元素的显示顺序。*/                
+                -webkit-box-flex: 1;
+                box-flex: 1;
+                width: 20px;
+                height: 15px;                
+            }
+            .ent-li .left {
+                -webkit-box-flex: 1; /*box-flex:1控制宽度自适应*/
+                box-flex: 1;
+                font-size: 16px;
+                color: #333;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .ent-li .right {    /*右侧啥都不用管*/
+                text-align: right;
+                font-size: 12px;
+                color: #999;
+                padding-left: 10px;
+            }            
+        </style>
     </head>
     <body>
-        
+        <!-- 三角形套装 -->
+        <div class="arrow arrow-left-top"></div>
+        <div class="arrow arrow-right-top"></div>
+        <div class="arrow arrow-left-bottom"></div>
+        <div class="arrow arrow-right-bottom"></div>
+
+        <!-- 两行省略号隐藏 -->
+        <div class="elli">我是大笨蛋我是大笨蛋我是大笨蛋我是大笨蛋我是大笨蛋我是大笨蛋我是大笨蛋我是大笨蛋我是大笨蛋</div>
+
+        <!-- 通过伪对象选择符进行图文布局 -->
+        <p class="before">通过伪对象选择符进行图文布局</p>
+
+        <!-- 弹性布局应用1 -->
+        <ul>
+            <li class="ent-li">
+                <img class="ent-img" src="img/cc.png">
+                <div class="left">主题门票</div>
+                <div class="right">0000000000000000000</div>
+            </li>            
+        </ul>
         <script src="js/.js"></script>
     </body>
 </html>

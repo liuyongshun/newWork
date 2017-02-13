@@ -1,4 +1,4 @@
-/*防止 iOS 横屏字号放大，*/
+防止 iOS 横屏字号放大*/
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -26,20 +26,31 @@ blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr
 body, button, input, select, textarea, optgroup {
     font: 12px/1.5 "Microsoft Yahei",arial,sans-serif;
 }
+
+/*label 元素给予手型，暗示此处可点击*/
+label {
+    cursor: pointer;
+}
+/* 修正未定义为「inline-block」的元素*/
+audio,
+canvas,
+video,
+progress {
+  display: inline-block;/* 1 */
+  vertical-align: baseline;/* 2 */
+}
+
 /**
 * 1. 修正所有浏览器中字体不继承的问题
 * 2. 修正所有浏览器中字号不继承的问题
 * 3. 修正 Firefox 3+， Safari5 和 Chrome 中外边距不同的问题
-* 4. 改善在所有浏览器下的垂直对齐方式
-* 5. Webkit（chrome）浏览器中输入（文本框）或textarea的黄色焦点框
+* 4. Webkit（chrome）浏览器中输入（文本框）或textarea的黄色焦点框
 */
 input, button, select, textarea {
-    outline: none; /*5*/
+    outline: none; /*4*/
     font-family: inherit;/* 1 */
     font-size: 100%;/* 2 */
     margin: 0;/* 3 */
-    vertical-align: baseline;/* 4 */
-    *vertical-align: middle;/* 4 */
 }
 
 /*禁止文本域拉伸*/
@@ -72,11 +83,6 @@ code, kbd, pre, samp {
 /*font-size: 80%; 是相对于父元素的百分比*/
 small {
     font-size: 80%;
-}
-
-/*移除IE下默认的垂直滚动条。*/
-textarea {
-    overflow: auto;
 }
 
 /*设置正确的加粗*/
@@ -124,6 +130,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 /*单元格添加边框*/
 table th,
 table td {
@@ -143,44 +150,24 @@ audio:not([controls]) {
   display: none;
   height: 0;
 }
+
+/*添加正确的隐藏*/
+[hidden],
+template {
+  display: none;
+}
+
 /**
 * 1. 避免 Android 4.0.* 中的 WebKit bug ，该bug会破坏原生的「audio」 和「video」的控制器
 * 2. 更正 iOS 中无法设置可点击的「input」的问题
 * 3. 统一其他类型的「input」的光标样式
  */
-
 button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
-}
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
-/**
- * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 /**
@@ -190,82 +177,15 @@ html [type="button"],
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
-
-/*label 元素给予手型，暗示此处可点击*/
-label {
-    cursor: pointer;
-}
-
-/**
-* 1. 修正 IE 8/9 box-sizing 被设置为「content-box」的问题
-* 2. 移除 IE7 中多余的内边距(IE6 中任然存在)
-*/
-input[type="checkbox"],
-input[type="radio"] {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;/* 1 */
-    *height: 13px;/* 2 */
-    *width: 13px;/* 2 */
-}
-
-/*在IE10以下添加正确的隐藏。*/
-[hidden] {
-    display: none;
-}
-
-/**
-* 1. 去除 IE6-9 和 Firefox 3 中 a 内部 img 元素默认的边框
-* 2. 修正 IE8 图片消失bug （未知）
-* 3. 防止 img 指定「height」时图片高度不能按照宽度等比缩放，导致图片变形（未知）
-* 4. 让图片支持响应式 
-* 5. 去除现代浏览器图片底部的空隙 (inline-block的5像素问题)
-* 6. 修复 IE7 图片缩放失真  （未知）
-*/
-img {
-    border-style: none;/* 1 */
-    width: auto\9;/* 2 */
-    height: auto;/* 3 */
-    max-width: 100%;/* 4 */
-    vertical-align: top;/* 5 */
-    -ms-interpolation-mode: bicubic;/* 6 */
-}
-/**
-* 1. 修正 Safari 5 和 Chrome 中「appearance」被设置为「searchfield」的问题
-* 2. 修正 Safari 5 和 Chrome 中「box-sizing」被设置为 「border-box」的问题
-*/
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-}
-
 /**
 * 1.移除 OS X 中 Safari5 和 Chrome 搜索框内侧的左边距
-* 2.如果需要隐藏清除按钮需要加上
- input[type="search"]::-webkit-search-cancel-button
 */
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-/* 修正未定义为「inline-block」的元素*/
-audio,
-canvas,
-video,
-progress {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */
-}
-
-
 
 /*
-*@ Name:       CSS 三角形组件
-*@ Author:     一丝
-*@ Update:     2013-9-29 16:05:04
-*@ Usage:
+* CSS 三角形组件
 */
 .arrow {
   font-size: 0;
@@ -278,26 +198,6 @@ progress {
   vertical-align: -2px;
   border: 0 dashed transparent;
   border-width: 6px;
-}
-
-.arrow-top {
-  border-bottom-style: solid;
-  border-bottom-color: #2ab2df;
-}
-
-.arrow-bottom {
-  border-top-style: solid;
-  border-top-color: #2ab2df;
-}
-
-.arrow-left {
-  border-right-style: solid;
-  border-right-color: #2ab2df;
-}
-
-.arrow-right {
-  border-left-style: solid;
-  border-left-color: #2ab2df;
 }
 
 /* ◤左上角 */
@@ -328,27 +228,54 @@ progress {
   border-right-width: 0 !important;
 }
 
-
-
 /**
 * 文字溢出显示省略号
-* 1. Chrome 21+ bug https://bugs.webkit.org/show_bug.cgi?id=121902
 */
 .ellipsis {
-  display: block;
   white-space: nowrap;
   word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-align: left;
-  /* 2 */
 }
 
 /**
 * 统一用双线显示人民币符号「&yen;(￥)」
 */
-.rmb,
-.yuan {
+.rmb {
   font-family: arial;
   font-style: normal;
 }
+
+/*ios4.3+ android2.2+ 需要真机测试*/
+.elli {
+    width: 200px;
+    display: -webkit-box;    /*1.设置display类型为-webkit-box*/
+    font-size: 14px;
+    line-height: 18px;
+    overflow: hidden;        /*2.设置元素超出隐藏*/
+    text-overflow: ellipsis; /*3.设置超出样式为省略号*/
+    -webkit-line-clamp: 2;   /*4.设置2行应用省略*/
+    -webkit-box-orient: vertical;
+}
+
+/*用伪类设置图文排版 android2.1+ ios3.1+*/
+.before::before {
+    content: '';
+    display: inline-block;
+    background: url("../img/cc.png") center center no-repeat;
+    background-size: contain;
+    width: 17px;
+    height: 14px;
+    margin: 0 5px -2px 0;
+}
+
+/*::selection只能定义被选择时的background-color，color及text-shadow。android2.1+ ios3.2+*/
+.before::selection {
+  background-color: red;
+  /*color: red;*/
+}
+
+/*选择器支持*/
+/*:not()  android2.1+ ios3.2+*/
+/*.border li:not(:last-child) { border-bottom: 1px solid #ddd;}*/
+/*:first-child :last-child  :noly-child :nth-child(可以用负数) :nth-of-type()同类元素  :empty (匹配没有子元素的元素)*/
