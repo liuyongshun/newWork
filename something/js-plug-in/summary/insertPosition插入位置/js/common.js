@@ -1,6 +1,6 @@
 
 
-<!--判断屏幕高度-->
+// <!--判断屏幕高度-->
 var total = document.documentElement.clientHeight;
 var mainCol = window.document.getElementById('mainCol'); 
 var mainHeight =  mainCol.offsetHeight;

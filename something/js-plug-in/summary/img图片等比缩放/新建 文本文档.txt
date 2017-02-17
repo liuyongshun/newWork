@@ -1,0 +1,4 @@
+html:
+
+onload="AutoResizeImage(100,100,this)"
+

@@ -2,37 +2,37 @@ $( function() {
 	$( '.side_nav' ).hide();
 	$( window ).scroll( function () {
 		var ysc = $( window ).scrollTop();   
-		console.log( ysc )
+		console.log( ysc );
 		if ( ysc >= 600 ) {
 			$( '.side_nav' ).show();
 		}
 		if( ysc >= 600 && ysc < 1400 ) {
 			$( '.fix_nav' ).removeClass( 'fix_bg_color' );
-			$( '.fix_nav' ).eq( 0 ).addClass( 'fix_bg_color' )
+			$( '.fix_nav' ).eq( 0 ).addClass( 'fix_bg_color' );
 		} else if( ysc >= 1400 && ysc < 2235 ) {
 			$( '.fix_nav' ).removeClass( 'fix_bg_color' );
-			$( '.fix_nav' ).eq( 1 ).addClass( 'fix_bg_color' )
+			$( '.fix_nav' ).eq( 1 ).addClass( 'fix_bg_color' );
 		} else if( ysc >= 2235 && ysc < 3130 ) {
 			$( '.fix_nav' ).removeClass( 'fix_bg_color' );
-			$( '.fix_nav' ).eq( 2 ).addClass( 'fix_bg_color' )
+			$( '.fix_nav' ).eq( 2 ).addClass( 'fix_bg_color' );
 		} else if( ysc >= 3130 && ysc < 4470 ) {
 			$( '.fix_nav' ).removeClass( 'fix_bg_color' );
-			$( '.fix_nav' ).eq( 3 ).addClass( 'fix_bg_color' )
+			$( '.fix_nav' ).eq( 3 ).addClass( 'fix_bg_color' );
 		} else if( ysc >= 4470 && ysc < 4900 ) {
 			$( '.fix_nav' ).removeClass( 'fix_bg_color' );
-			$( '.fix_nav' ).eq( 4 ).addClass( 'fix_bg_color' )
+			$( '.fix_nav' ).eq( 4 ).addClass( 'fix_bg_color' );
 		} else if( ysc >= 4900 && ysc < 5520 ) {
 			$( '.fix_nav' ).removeClass( 'fix_bg_color' );
-			$( '.fix_nav' ).eq( 5 ).addClass( 'fix_bg_color' )
+			$( '.fix_nav' ).eq( 5 ).addClass( 'fix_bg_color' );
 		} else if( ysc >= 5520 && ysc < 5840 ) {
 			$( '.fix_nav' ).removeClass( 'fix_bg_color' );
-			$( '.fix_nav' ).eq( 6 ).addClass( 'fix_bg_color' )
+			$( '.fix_nav' ).eq( 6 ).addClass( 'fix_bg_color' );
 		} else if( ysc >= 5840 && ysc < 7000 ) {
 			$( '.fix_nav' ).removeClass( 'fix_bg_color' );
-			$( '.fix_nav' ).eq( 7 ).addClass( 'fix_bg_color' )
+			$( '.fix_nav' ).eq( 7 ).addClass( 'fix_bg_color' );
 		} else {
 			$( '.fix_nav' ).removeClass( 'fix_bg_color' );
-			$( '.fix_nav' ).eq( 8 ).addClass( 'fix_bg_color' )
+			$( '.fix_nav' ).eq( 8 ).addClass( 'fix_bg_color' );
 		}
 	} );
 } );

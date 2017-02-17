@@ -1,4 +1,4 @@
-防止 iOS 横屏字号放大*/
+/*防止 iOS 横屏字号放大*/
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -270,7 +270,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 /*::selection只能定义被选择时的background-color，color及text-shadow。android2.1+ ios3.2+*/
-.before::selection {
+.before::selection {    
   background-color: red;
   /*color: red;*/
 }
