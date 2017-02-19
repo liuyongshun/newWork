@@ -1,0 +1,21 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title></title>
+</head>
+<body>
+	<a href="">
+		<dl>
+			<dt>这是dl外有a</dt>
+			<dd><div><a href="">这是内容，当dl在a标签内时，如果dd或dt的子代和后代再有a会解析错误</a></div></dd>
+		</dl>
+	</a>
+	<dl>
+		<dt>这是dl外没有a</dt>
+		<dd><a href="">dl外没a是内部有a可以正确解析</a></dd>
+	</dl>
+</body>
+</html
