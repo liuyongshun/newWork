@@ -57,7 +57,7 @@
                   // console.log(thW);
                   // console.log(disX);
                   // for (var i = 0; i < rows.length; i++) {
-                  var op=document.createElement("table");
+                  var op=document.getElementById('save');
                   op.innerHTML= e.target.parentNode.innerHTML;  
                   box.appendChild(op);
                   // };    
@@ -86,19 +86,19 @@
                   }
                   document.onmouseup=function(e){
                      var e=e||window.event,
-                         opr=box.getElementsByTagName("p"),
+                         opr=box.getElementById('save'),
                          oboxl=box.offsetTop+cdisY;
                         for (var i = 0; i < arrn.length; i++) {
                            if(arrn[i]<oboxl){
                             var index=i;
                            }
                         };
-                       for (var i = 0; i < rows.length; i++) {
-                          rows[i].innerHTML="";
-                          rows[i].innerHTML=rows[index].innerHTML;
-                          rows[i].innerHTML="";
-                          rows[i].innerHTML=opr[index].innerHTML;
-                       };
+                       // for (var i = 0; i < rows.length; i++) {
+                          // rows[i].innerHTML="";
+                          // rows[i].innerHTML=rows[index].innerHTML;
+                          rows[index].innerHTML="";
+                          rows[index].innerHTML=opr[0].childNodes.childNodes.innerHTML;
+                       // };
                        box.innerHTML="";
                        arrn.splice(0,arrn.length);
                        box.style.display="none";
