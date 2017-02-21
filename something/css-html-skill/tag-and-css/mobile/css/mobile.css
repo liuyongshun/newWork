@@ -279,3 +279,40 @@ input[type="search"]::-webkit-search-decoration {
 /*:not()  android2.1+ ios3.2+*/
 /*.border li:not(:last-child) { border-bottom: 1px solid #ddd;}*/
 /*:first-child :last-child  :noly-child :nth-child(可以用负数) :nth-of-type()同类元素  :empty (匹配没有子元素的元素)*/
+
+/*移动端不随软键盘升起而抬高的情况*/
+input:focus{-webkit-tap-highlight-color:rgba(255, 255, 255, 0);
+ -webkit-user-modify:read-write-plaintext-only;}
+
+
+/*placeholder占位符颜色自定义*/
+input:-moz-placeholder {color: #369;}
+::-webkit-input-placeholder {color:#369;}
+
+
+/*CSS判断横屏竖屏*/
+@media screen and (orientation: portrait) {
+  /*竖屏 css*/
+} 
+@media screen and (orientation: landscape) {
+  /*横屏 css*/
+}
+
+/*移除HTML5 input在type="number"时的上下小箭头
+在chrome下：*/
+  input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+      -webkit-appearance: none !important;
+      margin: 0; 
+  }
+/*Firefox下：*/
+  input[type="number"]{-moz-appearance:textfield;}
+
+  html {
+   filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  -webkit-filter: grayscale(1);
+}
