@@ -25,9 +25,9 @@
                   tdTop = getTarget(e).offsetTop,
                   that = this,
                   ctdTop = getEvent(e).clientY - chenkboxTop - tdTop;
-                  for (i = 0; i < tr()[0].cells.length; i ++) {
-                      arr.push(tr()[this.parentNode.rowIndex].cells[i].innerHTML);                    
-                  }
+                  // for (i = 0; i < tr()[0].cells.length; i ++) {
+                  //     arr.push(tr()[this.parentNode.rowIndex].cells[i].innerHTML);                    
+                  // }
                   for (var i = 0; i < tr().length; i++) {
                       arrH.push(tr()[i].offsetTop);
                   };
@@ -43,7 +43,7 @@
                       box.style.top = getEvent(e).clientY - chenkboxTop - ctdTop + 'px';
                       box.style.left= 0;
                       if (box.offsetTop > dragHeight) {
-                           box.style.top=dragHeight+"px"; 
+                           box.style.top = dragHeight + "px"; 
                       } else if (box.offsetTop < 0) {
                            box.style.top = 0;
                       }        
@@ -62,13 +62,17 @@
                            if (arrH[i] < oboxl) {
                             var index = i;
                            }
-                        };
-                       for (var i = 0; i < tr()[0].cells.length - 1; i++) {
-                          that.parentNode.cells[i+1].innerHTML = "";
-                          that.parentNode.cells[i+1].innerHTML = tr()[index].cells[i+1].innerHTML;
-                          tr()[index].cells[i+1].innerHTML="";
-                          tr()[index].cells[i+1].innerHTML= arr[i+1];
-                       };
+                        }
+
+                        tr()[index].parentNode.insertBefore(tr()[index],that.parentNode);
+                        console.log(that.parentNode);
+                        console.log(tr()[index]);
+                       // for (var i = 0; i < tr()[0].cells.length - 1; i++) {
+                       //    that.parentNode.cells[i+1].innerHTML = "";
+                       //    that.parentNode.cells[i+1].innerHTML = tr()[index].cells[i+1].innerHTML;
+                       //    tr()[index].cells[i+1].innerHTML="";
+                       //    tr()[index].cells[i+1].innerHTML= arr[i+1];
+                       // };
                        arrH.splice(0,arrH.length);
                        arr.splice(0,arr.length);
                        box.style.display = "none";
@@ -78,7 +82,7 @@
                   }
 
              }
-        };
+        }
         
   })(window,document);
 
@@ -86,6 +90,10 @@
   // cellIndex 属性可返回一行的单元格集合中单元格的位置。
   // rowIndex 属性返回某一行在表格的行集合中的位置（row index）。
   // cells 集合返回表格中所有单元格的一个数组。
+  // parentNode.insertBefore(newBtn,oldBtn.nextSiblings)//将在原有btn的后面插入新创建的btn，！！！原因是没有insetAfter！！所以用nextSiblings
+  // insertBefore(newItem,existingItem)
+  // parentElement.removeChild(_element)
+  
   // (function(win,doc) {
   //   // var 字面量形式的对象，属性里的this指向window。方法里指向该对象。
   //   var v = {
