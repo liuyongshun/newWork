@@ -1,0 +1,3 @@
+单选框的的默认加载，两个单选框，第一个设置checked，第二个不设置，当选中第二个时跳页，在通过浏览器的返回键撤回，被选中的还是第二个，而不是checked。解决方法。
+$("input:radio[name='status']").get(1).checked = false;  
+$("input:radio[name='status']").get(0).checked = true;  

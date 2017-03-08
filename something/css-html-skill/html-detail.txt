@@ -1,0 +1,19 @@
+文档类型：
+html5：
+<!DOCTYPE html> 指示 web 浏览器关于页面使用哪个 HTML 版本进行编写的指令。
+
+该声明下废弃的元素：
+<acronym>  <applet>  <basefont>  <big>  <center>  <dir>  <font>  <frame>  <frameset>  <noframes>  <strike>  <tt>  <u>
+
+
+HTML 4.01 Strict：
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+HTML 4.01 Transitional：
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+HTML 4.01 Frameset：
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+XHTML 1.1：
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">

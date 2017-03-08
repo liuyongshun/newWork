@@ -228,6 +228,15 @@ input[type="search"]::-webkit-search-decoration {
   border-right-width: 0 !important;
 }
 
+/*另一种方式*/
+.triangle {
+    width: 0;
+    height: 0;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #c59c53;    
+    float: right;                      
+    margin-left: -9px;
+}          
 /**
 * 文字溢出显示省略号
 */
@@ -316,3 +325,10 @@ input:-moz-placeholder {color: #369;}
   filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
   -webkit-filter: grayscale(1);
 }
+
+
+                <span class="l_list">
+                    <span class="l_item">工艺：釉上彩;</span>
+                    <span class="l_item">适用人数：5人;</span>
+                    <span class="l_item">材质：45</span>
+                </span>
