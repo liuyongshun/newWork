@@ -1,0 +1,2 @@
+1、 垂直选择： 滚轮中键按住滚动 或按住shift + 右键 +滚动滚轮  或  ctrl + alt +down/up
+2、进行自适应缩进的粘贴:  Ctrl-Shift-v) 
