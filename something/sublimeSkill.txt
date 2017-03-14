@@ -5,16 +5,51 @@ package Control官网复制ST3的代码 — 打开ST3的console — 粘贴 —完成后重启 — Ctr
 
 插件：（安装通过： Ctrl+Shift+P — 输入PC — 插件名）
 
-color hightlighter : 颜色高亮（css很好用）
-emmet： html的自动补全。 ctrl + e（禁用了element的tab补全）自动补全css兼容性内容。
-ConvertToUTF8：
-sublime Linter： eslint需要。
-SublimeLinter-contrib-eslint ;   eslint需要。
-eslint：
-jsformat： js格式化。
-css format： css格式化
-AutoPrefixer 插件，它可以自动补全浏览器私有属性前缀，兼容性数据从著名的 can I use 读取，
+-color hightlighter : 颜色高亮（css颜色提示很好用）
+
+-emmet： html的自动补全。 ctrl + e（禁用了element的tab补全）自动补全css兼容性内容（同autoPrefixer类似）。
+
+-ConvertToUTF8：
+
+-sublime Linter： eslint需要。
+
+-SublimeLinter-contrib-eslint ;   eslint需要。
+
+-eslint：
+
+-jsformat： js格式化。
+-css format： css格式化
+
+AutoPrefixer 插件，它可以自动补全浏览器私有属性前缀，兼容性数据从著名的 can I use 读取。(Node.js依赖)
+
+设置：1、Preferences>package setting>AutoPrefixer>Setting-User 
+（如果不能用去掉Preferences>package setting>AutoPrefixer>Defaults-User下的"prefixOnSave": false）
+{
+    "browsers": ["last 7 versions"],
+    "cascade": true,
+    "remove": true
+}
+或
+{
+    "browsers": ["last 2 versions","last 2 Chrome versions",">5%","Firefox >= 20","ie 6-8","iOS 7"]
+}
+2、绑定快捷键，随你喜欢（    { "keys": ["ctrl+alt+shift+p"], "command": "autoprefixer" } ）
+
 -expand_region ：向外扩展，范围选择
+
+设置： 
+绑定快捷键：
+[
+    { "keys": ["ctrl+shift+space"], "command": "expand_region" },
+    {
+      "keys": ["ctrl+space"],
+      "command": "expand_region",
+      "args": {"undo": true},
+      "context": [{ "key": "expand_region_soft_undo" }]
+    }
+]
+
+
 
 
 - sass: sass高亮提示
@@ -97,21 +132,24 @@ AutoPrefixer 插件，它可以自动补全浏览器私有属性前缀，兼容性数据从著名的 can I us
 
 我的用户设置：
 {
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
-	"expand_tabs_on_save": true,
-	"disable_tab_abbreviations": true,
-	"draw_minimap_border": true,
-	"highlight_line": true,
-	"font_size": 13,
-	"highlight_modified_tabs": true,
-	"auto_find_in_selection": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"tab_size": 4,
-	"font_face": "Microsoft YaHei Mono",
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+    "auto_find_in_selection": true,
+    "color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+    "disable_tab_abbreviations": true,
+    "draw_minimap_border": true,
+    "expand_tabs_on_save": true,
+     "font_face": "Microsoft YaHei Mono",
+    "draw_white_space": "all" ,
+    "font_size": 14,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?"
 }
 
+去掉了中线，有的类名用的中线，便于选择
