@@ -52,42 +52,63 @@
 
 
 
-// // judge email format.      /[\u4e00-\u9fa5]/g g全局匹配，m匹配大小写，i匹配
-var checkEmail = {
-    chinese:  /[\u4e00-\u9fa5]/g,
-    email:  /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
-    // judges为提交按钮，
-    getSelect: document.getElementById( 'judges' ),
-    // text为输入邮箱的input标签。
-    getValue: document.getElementById( 'text' ),
-    method: function() {
-        var that = this;
-        if( !document.addEventListener ) {
-            this.getSelect.attachEvent( 'onclick', function() {
-            var str = that.getValue.value;
-            var patt = /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;            
-            var check = str.match( patt );
-            console.log(check)
-            if ( !check ) {
-                // 换成现在用的提示效果
-                alert( 'format error' );
-            }           
-        } );                         
-        } else {
-            this.getSelect.addEventListener( 'click', function() {
-            var str = that.getValue.value;
-            var patt = /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;            
-            var check = str.match( patt );
-            console.log(check)
-            if ( !check ) {
-                 // 换成现在用的提示效果
-                alert( 'format error1' );
+/**
+ * regExP : 1.g: match global  2.m: match multi-line 3.i: don't indentify upper case or lower case
+ * @param {regExp} Chinese    - match Chinese
+ * @param {regExp} Email      - match email               ; condition：1. starting with letter 2.matching "_" one or multiple before "@" 3. ending with number or letter
+ * @param {regExp} ChinaTel   - match telephone in China  ; format: xxx-12345678 or xxxx-1234567
+ * @param {regExp} ChinaPhone - match mobile phone
+ * @param {regExp} Card       - match ID card             ; number is 15 or 18 and the last byte for checking
+ * @param {regExp} Account    - check correct             ; 1. start with letter  2. allow length is 15 to 18 by number, letter and "_"
+ * @param {regExp} Password   - check security
+ * @param {regExp} Money      - check Money               ; format: 0 or 33,333,333.00 only two byte at the end
+ */
+(function(window,document) {
+    var regExp = {
+        Chinese: /[\u4e00-\u9fa5]/,
+        Email: /^[a-zA-Z]+\w*@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/,
+        ChinaTel: /\d{3}-\d{8}|\d{4}-\d{7}/,
+        ChinaPhone: /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/,
+        Card: /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/,
+        Account: /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/,
+        Password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/,
+        Money: /^(0|([1-9]{1,3}(\,\d{3})*\.\d{1,2}))$/,
+        Empty: /\n\s*\r/,
+
+        getSelect: document.getElementById( 'judges' ),
+        getValue: document.getElementById( 'text' ),
+        
+        method: function() {
+            var that = this;
+            if( !document.addEventListener ) {
+                this.getSelect.attachEvent( 'onclick', function() {
+                var str = that.getValue.value;
+                var patt = /^[a-zA-Z]+\w*@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/;
+                var check = str.match( patt );
+                console.log(check)
+                if ( !check ) {
+                    // 换成现在用的提示效果
+                    alert( 'format error' );
+                }           
+            } );                         
+            } else {
+                this.getSelect.addEventListener( 'click', function() {
+                var str = that.getValue.value;          
+                var patt = that.Money;
+                var check = str.match( patt );
+                console.log(check)
+                if ( !check ) {
+                    // 换成现在用的提示效果
+                    alert( 'format error1' );
+                }
+            } );   
             }
-        } );   
         }
-    }
-};
-checkEmail.method();
+    };
+    regExp.method();
+})(window,document);
+
+
 
 
 // // ====================practice rank========================================================
