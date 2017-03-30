@@ -11,3 +11,10 @@
 #judges:hover {
     opacity: 0.7;
 }
+
+input, label {
+    display: block;
+}
+label {
+    padding: 5px 0;
+}

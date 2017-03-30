@@ -8,12 +8,20 @@
     </head>
     <body>
          <form action="">
+            <label for="text">用户名字：</label>
             <input type="text" id="text" value="请输入内容" onfocus="if(this.value == '请输入内容'){this.value = ''}" onblur="if(this.value == ''){this.value = '请输入内容'}">
-            <div id="judges">judgeFormContent</div>
+            <label for="">密码</label>
+            <input type="text" id="password">
+            <label for="">电话：</label>
+            <input type="text" id="tel">
+            <label for="">手机：</label>
+            <input type="text" id="mobile">
+            <label for="">邮箱：</label>
+            <input type="text" id="mail">
+            <label for="">身份证</label>
+            <input type="text" id="card">
         </form> 
-        <section>
-            
-        </section>
+        <div id="judges">judgeFormContent</div>
         <script src="js/index.js"></script>        
     </body>
 </html>
