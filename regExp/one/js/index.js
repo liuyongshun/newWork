@@ -9,21 +9,21 @@
  * 2. strObj.match(regExp)
  * 3. regExp.test(strObj)
  * 4. regExp.exec(strObj)
- * 5. strObj.search(regExp)
+ * 5. strObj.search(regExp)     search括号内任意字符，为设置g时，找到匹配中的任何一个都会停止。
  * 6. regExp.compile(strObj);
  */
-var str="Visit W3CSchool Visit W3CSchool Visit W3CSchool blue";
-var patt1=/w3cschool/ig;
-var n = str.replace(/blue/gi,"red");
-console.log(str.match(patt1));   // ["W3CSchool", "W3CSchool", "W3CSchool"]
-console.log(patt1.test(str));    // true
-console.log(patt1.exec(str));    // ["W3CSchool"] PS: just match once,if want to get all, you have to call time after time.
-console.log(str.search(patt1));  // 6
-console.log(n);                  // Visit W3CSchool Visit W3CSchool Visit W3CSchool red 
+// var str="Visit W3CSchool Visit W3CSchool Visit W3CSchool blue";
+// var patt1=/w3cschool/ig;
+// var n = str.replace(/blue/gi,"red");
+// console.log(str.match(patt1));   // ["W3CSchool", "W3CSchool", "W3CSchool"]
+// console.log(patt1.test(str));    // true
+// console.log(patt1.exec(str));    // ["W3CSchool"] PS: just match once,if want to get all, you have to call time after time.
+// console.log(str.search(patt1));  // 6
+// console.log(n);                  // Visit W3CSchool Visit W3CSchool Visit W3CSchool red 
 
-// Achieve by new regExp
-var patt2 = new RegExp('w3cschool','ig');
-console.log(patt2.test(str));
+// // Achieve by new regExp
+// var patt2 = new RegExp('w3cschool','ig');
+// console.log(patt2.test(str));
 
 /**
  * @param {regExp} Chinese    - match Chinese
@@ -35,7 +35,8 @@ console.log(patt2.test(str));
  * @param {regExp} Password   - check security
  * @param {regExp} Money      - check Money               ; format: 0 or 33,333,333.00 only two byte at the end
  */
-(function(window,document) {
+
+(function($) {
     var regExp = {
         Chinese: /[\u4e00-\u9fa5]/,
         Email: /^[a-zA-Z]+\w*@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/,
@@ -45,59 +46,62 @@ console.log(patt2.test(str));
         Account: /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/,
         Password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/,
         Money: /^(0|([1-9]{1,3}(\,\d{3})*\.\d{1,2}))$/,
-        Empty: /\n\s*\r/,
-
-        getSelect: document.getElementById( 'judges' ),
-        getValue: document.getElementById( 'text' ),
-        
-        method: function() {
-            var that = this;
-            if( !document.addEventListener ) {
-                this.getSelect.attachEvent( 'onclick', function() {
-                var str = that.getValue.value;
-                var patt = /^[a-zA-Z]+\w*@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/;
-                var check = str.match( patt );
-                console.log(check)
-                if ( !check ) {
-                    // 换成现在用的提示效果
-                    alert( 'format error' );
-                }           
-            } );                         
-            } else {
-                this.getSelect.addEventListener( 'click', function() {
-                var str = that.getValue.value;          
-                var patt = that.Money;
-                var check = str.match( patt );
-                console.log(check)
-                if ( !check ) {
-                    // 换成现在用的提示效果
-                    alert( 'format error1' );
-                }
-            } );   
-            }
+        Empty: /\n\s*\r/
+    }
+    $.fn.extend({
+        checkEmail: function() {
+            return this[0].value
         }
-    };
-    regExp.method();
-})(window,document);
+    })
+
+    //     getSelect: document.getElementById( 'judges' ),
+    //     getValue: document.getElementById( 'text' ),
+        
+    //     method: function() {
+    //         var that = this;
+    //         if( !document.addEventListener ) {
+    //             this.getSelect.attachEvent( 'onclick', function() {
+    //             var str = that.getValue.value;
+    //             var patt = /^[a-zA-Z]+\w*@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/;
+    //             var check = str.match( patt );
+    //             console.log(check)
+    //             if ( !check ) {
+    //                 // 换成现在用的提示效果
+    //                 alert( 'format error' );
+    //             }           
+    //         } );                         
+    //         } else {
+    //             this.getSelect.addEventListener( 'click', function() {
+    //             var str = that.getValue.value;          
+    //             var patt = that.Money;
+    //             var check = str.match( patt );
+    //             console.log(check)
+    //             if ( !check ) {
+    //                 // 换成现在用的提示效果
+    //                 alert( 'format error1' );
+    //             }
+    //         } );   
+    //         }
+    //     }
+    // };
+    // regExp.method();
+})(jQuery);
 
 
 
 
 // // ====================practice rank========================================================
-// var str = "hat hot my telephone is 12202345672  10 email: liulfjs@126.com \n liuyongshun this his at"; 
-// // search 括号内任意字符，为设置g时，找到ema中的任何一个都会停止。[a-z]
+var str = "hat hot my telephone is 12202345672  10 email: liulfjs@126.com \n liuyongshun this his at"; 
+// // search 括号内任意字符，为设置g时，找到ema中的任何一个都会停止。
 // var patt = /[ema]/;
 // console.log( str.match( patt ) );
 // // 查找除了括号内所有的字符。[^]
 // var patt1 = /[^ema]/g;
 // console.log( str.match( patt1 ) );
-// // 查找任何从 0 至 3 的数字。[0-5]
-// var patt2 = /[0-3]/g;
-// console.log( str.match( patt2 ) );
 // // 查找任何指定的选项。(em|liu|shun)
 // var patt3 = /(ema|is|liu)/g;
 // console.log( str.match( patt3 ) );
-// // 查找单个字符,除了换行和行结束符。 h.t
+// // 查找单个字符,除了换行和行结束符。
 // var patt4 = /h.t/g;
 // console.log( str.match( patt4 ) );
 // // 查找单词字符。 \w(小写)

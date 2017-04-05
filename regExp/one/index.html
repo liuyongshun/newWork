@@ -4,12 +4,13 @@
         <meta charset="utf-8">
         <meta name="author" content="liu">
         <link  rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
         <title></title>
     </head>
     <body>
          <form action="">
             <label for="text">用户名字：</label>
-            <input type="text" id="text" value="请输入内容" onfocus="if(this.value == '请输入内容'){this.value = ''}" onblur="if(this.value == ''){this.value = '请输入内容'}">
+            <input type="text" id="text" value="a11@qq.com" onfocus="if(this.value == '请输入内容'){this.value = ''}" onblur="if(this.value == ''){this.value = '请输入内容'}">
             <label for="">密码</label>
             <input type="text" id="password">
             <label for="">电话：</label>
@@ -23,5 +24,8 @@
         </form> 
         <div id="judges">judgeFormContent</div>
         <script src="js/index.js"></script>        
+        <script >
+            console.log($("#text").checkEmail());
+        </script>  
     </body>
 </html>
