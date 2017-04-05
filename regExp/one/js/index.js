@@ -1,59 +1,31 @@
-// var str="Visit W3CSchool Visit W3CSchool Visit W3CSchool";
-// var patt1=/w3cschool/i; 
-// // var patt2 = /w3cschool/gi;
-// console.log( str.match( patt1 ) );
-// console.log( patt1.test(str) );
-// console.log( patt1.exec(str) );
-// console.log( str.search(patt1) );
-// var n = str2.replace(/blue/gi,"red");  //+++++++++++++++++
-// console.log( str.match( patt2 ) );
+/**
+ * regExp
+ * 1.g: match global  
+ * 2.m: match multi-line 
+ * 3.i: don't indentify upper case or lower case
+ * =============================================
+ * method && rule:
+ * 1. strObj.replace(/blue/ig,"red")
+ * 2. strObj.match(regExp)
+ * 3. regExp.test(strObj)
+ * 4. regExp.exec(strObj)
+ * 5. strObj.search(regExp)
+ * 6. regExp.compile(strObj);
+ */
+var str="Visit W3CSchool Visit W3CSchool Visit W3CSchool blue";
+var patt1=/w3cschool/ig;
+var n = str.replace(/blue/gi,"red");
+console.log(str.match(patt1));   // ["W3CSchool", "W3CSchool", "W3CSchool"]
+console.log(patt1.test(str));    // true
+console.log(patt1.exec(str));    // ["W3CSchool"] PS: just match once,if want to get all, you have to call time after time.
+console.log(str.search(patt1));  // 6
+console.log(n);                  // Visit W3CSchool Visit W3CSchool Visit W3CSchool red 
 
-
-// // test()方法
-// var str1 = "hello world I like code"
-// var patt3 = /e/g;
-// console.log( patt3.test() ); 
-
-// var str2 = new RegExp( 'e' );
-// console.log( str2.test() );
-
-
-// exec()method
-// var str4  = " hello World everyone";
-// var patt4 = /wor/gi;
-// console.log( patt4.exec( str4 ) );
-
-
-
-// var str="Hello world!"
-// console.log(str.match("world"))
-// console.log(str.match("World"))
-// console.log(str.match("worlld"))
-// console.log(str.match("world!"))
-
-
-// ==================================regExp the regular of regExp============================================
-// var obj = {
-//     getSelect: document.getElementById( 'judges' ),
-//     getValue: document.getElementById( 'text' ),
-//     method: function() {
-//             this.getSelect.addEventListener( 'click', function() {
-//             var str = this.getValue.value;
-//             var patt = /\@/;            
-//             var check = str.match( patt );
-//             if ( !check ) {
-//                 alert( 'the text of you writing is error' );
-//             }
-//             console.log( 'congratulate, you success!' )
-//         }.bind( obj ) );
-//     }
-// }
-// obj.method();
-
-
+// Achieve by new regExp
+var patt2 = new RegExp('w3cschool','ig');
+console.log(patt2.test(str));
 
 /**
- * regExP : 1.g: match global  2.m: match multi-line 3.i: don't indentify upper case or lower case
  * @param {regExp} Chinese    - match Chinese
  * @param {regExp} Email      - match email               ; condition：1. starting with letter 2.matching "_" one or multiple before "@" 3. ending with number or letter
  * @param {regExp} ChinaTel   - match telephone in China  ; format: xxx-12345678 or xxxx-1234567
