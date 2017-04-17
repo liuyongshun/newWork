@@ -8,7 +8,7 @@ html {
 article,
 aside,
 figcaption,
-figure, 
+figure,
 footer,
 header,
 nav,
@@ -54,7 +54,7 @@ input, button, select, textarea {
 }
 
 /*禁止文本域拉伸*/
-textarea { 
+textarea {
     resize: none;
 }
 
@@ -116,7 +116,7 @@ sup {
 */
 a {
     text-decoration: none; /*1*/
-  -webkit-text-decoration-skip: objects; /* 2 */    
+  -webkit-text-decoration-skip: objects; /* 2 */
 }
 
 /*去掉点击时的焦点框，保证键盘可以使用焦点框*/
@@ -233,10 +233,10 @@ input[type="search"]::-webkit-search-decoration {
     width: 0;
     height: 0;
     border-right: 20px solid transparent;
-    border-top: 30px solid #c59c53;    
-    float: right;                      
+    border-top: 30px solid #c59c53;
+    float: right;
     margin-left: -9px;
-}          
+}
 /**
 * 文字溢出显示省略号
 */
@@ -279,7 +279,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 /*::selection只能定义被选择时的background-color，color及text-shadow。android2.1+ ios3.2+*/
-.before::selection {    
+.before::selection {
   background-color: red;
   /*color: red;*/
 }
@@ -302,7 +302,7 @@ input:-moz-placeholder {color: #369;}
 /*CSS判断横屏竖屏*/
 @media screen and (orientation: portrait) {
   /*竖屏 css*/
-} 
+}
 @media screen and (orientation: landscape) {
   /*横屏 css*/
 }
@@ -311,7 +311,7 @@ input:-moz-placeholder {color: #369;}
 在chrome下：*/
   input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
       -webkit-appearance: none !important;
-      margin: 0; 
+      margin: 0;
   }
 /*Firefox下：*/
   input[type="number"]{-moz-appearance:textfield;}

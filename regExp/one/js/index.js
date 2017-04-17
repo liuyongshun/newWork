@@ -37,7 +37,7 @@
  */
 
 (function($) {
-    var regExp = {
+    var r = {
         Chinese: /[\u4e00-\u9fa5]/,
         Email: /^[a-zA-Z]+\w*@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/,
         ChinaTel: /\d{3}-\d{8}|\d{4}-\d{7}/,
@@ -50,7 +50,7 @@
     }
     $.fn.extend({
         checkEmail: function() {
-            return this[0].value
+            return r.Email.test($(this).val())
         }
     })
 

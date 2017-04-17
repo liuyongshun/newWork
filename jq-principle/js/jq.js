@@ -87,7 +87,7 @@
 //     // return this 返回对象本身，从而实现链式调用。
 //     return this;
 // }
-// // 最外层封装 我不喜欢new bababa，太长。
+// // 最外层封装 我不喜欢new balabala，太长。
 // var $ = function(selector, context) {
 //     return new F(selector, context);
 // }
@@ -134,7 +134,6 @@
 // 第五步基本上就是完整的jquery了。下面完善，首先觉得F不太好。那就用$.fn替换掉他。相当于F不再是单独的变量定义的了。而是$的一个方法。
 // new 的是$.fn 所以this指向$.fn而不是$。
 var $ = function(selector, context) {
-    console.log(this)
     return new $.fn.init(selector, context);
 }
 $.fn = $.prototype;
@@ -147,14 +146,13 @@ $.fn.each = function(fn) {
     return this;
 }
 $.fn.hide = function() {
-    // console.log(this)
     this.each(function() {
        this.style.display = "none";
     });
     return this;
 };
 $.fn.init = function(selector, context) {
-    // console.log(this)
+    console.log(this)
     var nodeList = (context || document).querySelectorAll(selector);
     this.length = nodeList.length;
     for (var i = 0; i < this.length; i++) {
@@ -162,9 +160,18 @@ $.fn.init = function(selector, context) {
     }
     return this;
 }
+$.fn.show = function() {
+    this.each(function() {
+        this.style.display = "block";
+    })
+    console.log(this)
+    return this;
+}
+// 上边实现了实例$.fnd的init方法，此时this指向init，而其他方法都在$.fn上，为了可以应用其他方法，将init的prototype指向了$.fn（即$.prototype）
 
-$('.lll')
 
+// 在原型上设置方法，不是函数声明，没有提升效果。所以这句话必须放在最下边。
+$.fn.init.prototype = $.fn;
 
 
 

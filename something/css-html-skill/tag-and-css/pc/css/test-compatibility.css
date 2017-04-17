@@ -4,7 +4,7 @@
     font-size: 30px;
 }
 .main {
-    background-color: #ccc;    
+    background-color: #ccc;
 }
 .main2 {
     background-color: #ddd;
@@ -17,7 +17,7 @@
 }
 /*IE7及更早浏览器下子元素相对定位时父元素overflow属性的auto|hidden失效的问题 （给relative设置相对定位）*/
 .relative {
-    position: relative;/*解决失效*/ 
+    position: relative;/*解决失效*/
     overflow:auto;
     width:260px;
     height:80px;
@@ -49,7 +49,7 @@
   *word-spacing: -1px;
   /* IE6、7 */
   height: 100%;
-  /* 继承父级高度 */        
+  /* 继承父级高度 */
 }
 /*方法五：父元素设置如下*/
 .dib-box {

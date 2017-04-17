@@ -1,0 +1,94 @@
+﻿@charset "utf-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: microsoft yahei, simsun;
+    font-size: 12px;
+    color: #5e5e5e;
+}
+
+ul, li, ol, dl, dt, dd {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:link, a:hover, a:visited {
+    text-decoration: none;
+}
+
+
+/* 友情链接 */
+.y_friend_tab {
+    width: 573px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    _margin-right: 5px;
+    background: #fff;
+}
+
+    .y_friend_tab ul {
+        display: block;
+        width: 573px;
+        height: 33px;
+        line-height: 33px;
+        background: #f3f3f3;
+        border-bottom: 1px solid #CCC;
+    }
+
+        .y_friend_tab ul li {
+            display: block;
+            float: left;
+            padding-left: 10px;
+            padding-right: 10px;
+            background: #f3f3f3;
+            height: 33px;
+            line-height: 32px;
+            color: #3D3D3D;
+            font-size: 12px;
+            font-weight: bold;
+            border-right: 1px solid #ccc;
+        }
+
+        .y_friend_tab ul li {
+            cursor: pointer;
+            width: 60px;
+            font-size: 14px;
+        }
+
+            .y_friend_tab ul li.hover {
+                height: 34px;
+                background: #FFF;
+                border-bottom: 0px;
+            }
+
+.ljdown {
+    overflow: hidden;
+    width: 554px;
+    padding: 10px;
+}
+
+    .ljdown a {
+        width: 277px;
+        height: 29px;
+        line-height: 29px;
+        text-align: left;
+        display: block;
+        float: left;
+    }
+
+        .ljdown a.j_more {
+            position: absolute;
+            right: 10px;
+            top: 2px;
+            padding: 0px;
+            margin: 0px;
+            display: inline;
+            clear: both;
+            text-align: right;
+            width: 45px;
+        }
