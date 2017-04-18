@@ -1,15 +1,83 @@
-body,ul,li { margin:0; padding:0; }
-ol,ul,li { list-style:none; }
+body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+ol, ul, li {
+    list-style: none;
+}
+
+
 /*轮播*/
-.b_banner,.box,.show li {height: 487px;}
-.b_banner,.show li,.box {width: 100%;}
-.box {position: relative;overflow: hidden;}
-.b_ban_tu1 {background: url(../images/del/bg.png) no-repeat center top;display: list-item;}
-.b_ban_tu2 {background: url(../images/del/bg.png) no-repeat center top;display: none;}
-.b_ban_tu3 {background: url(../images/del/bg.png) no-repeat center top;display: none;}
-.points {position: absolute;left: 46%;bottom: 10px;width: 10%;height: 22px;padding-left: 10px;z-index: 10;}
-.page-l,.page-r {display: none;position: absolute;top: 40%;width: 40px;height: 100px;cursor: pointer;}
-.page-l {background: url(../images/index.png) 0px 0px;left: 0%;}
-.page-r {background: url(../images/index.png) -50px 0px;right: 0%;}
-.points li {float: left;width: 18px;height: 18px;margin: 0 5px;text-align: center;line-height: 22px;background: #FFF;border-radius: 50%;cursor: pointer;}
-.box .points .current {background: #1589ff}
+
+.b_banner, .box, .show li {
+    height: 487px;
+}
+
+.b_banner, .show li, .box {
+    width: 100%;
+}
+
+.box {
+    position: relative;
+    overflow: hidden;
+}
+
+.b_ban_tu1 {
+    background: url(../images/bg.png) no-repeat center top;
+    display: list-item;
+}
+
+.b_ban_tu2 {
+    background: url(../images/bg.png) no-repeat center top;
+    display: none;
+}
+
+.b_ban_tu3 {
+    background: url(../images/bg.png) no-repeat center top;
+    display: none;
+}
+
+.points {
+    position: absolute;
+    left: 46%;
+    bottom: 10px;
+    width: 10%;
+    height: 22px;
+    padding-left: 10px;
+    z-index: 10;
+}
+
+.page-l, .page-r {
+    display: none;
+    position: absolute;
+    top: 40%;
+    width: 40px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.page-l {
+    background: url(../images/index.png) 0px 0px;
+    left: 0%;
+}
+
+.page-r {
+    background: url(../images/index.png) -50px 0px;
+    right: 0%;
+}
+
+.points li {
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin: 0 5px;
+    text-align: center;
+    line-height: 22px;
+    background: #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.box .points .current {
+    background: #1589ff
+}

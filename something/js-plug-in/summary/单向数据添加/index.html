@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>jsDOM-operate</title>
+        <script src="js/jquery-1.9.1.js">  </script>
+        <style>
+            ul,li {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            .focus {
+                background-color: #1589ff;
+            }
+            .right {
+                background-color: #1589ff;
+            }
+            .l_start,.target {
+                width: 150px;
+                height: 120px;
+                margin-bottom: 15px;
+                line-height: 20px;
+                border: 1px solid #e1e1e1;
+                cursor: pointer;
+            }
+            .l_start li,
+            .target li {
+                padding: 2px 0 2px 10px;
+                overflow: hidden;
+            }
+            .fl {
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="l_start">
+            <li class="select">
+                <span class="fl">数据1</span>
+            </li>
+            <li class="select">
+                <span class="fl">数据2</span>
+            </li>
+            <li class="select">
+                <span class="fl">数据3</span>
+            </li>
+            <li class="select">
+                <span class="fl">数据4</span>
+            </li>
+            <li class="select">
+                <span class="fl">数据5</span>
+            </li>
+        </ul>
+        <ul class="target"> </ul>
+        <button id="button">添加</button>
+        <button id="btn">删除</button>
+        <script>
+            $(function() {
+                // 选中
+                function getFocus(arg) {
+                    $('.select').removeClass('focus');
+                    $(arg).addClass('focus');
+                }
+                // 删除
+                function deleteFocus() {
+                  $('.target .focus').remove();
+                  $('.target .focus').unbind();
+                }
+                // 判断并添加
+                function diff() {
+                    var value = $('.focus').text(),
+                    text = $('.target li');
+
+                    if (text.length === 0) {
+                      $('<li>', {
+                        class: 'select',
+                        text: value
+                        }).appendTo('.target');
+                    } else {
+                        for (i = 0; i < text.length; i ++) {
+                            if (value == text.eq(i).text()) return false;
+                        }
+                        $('<li>', {
+                            class: 'select',
+                            text: value
+                        }).appendTo('.target');
+                    }
+                }
+                // 事件
+                $('.l_start, .target').on('click', '.select', function () {
+                    getFocus(this)
+                });
+                $('#btn').on('click', function() {
+                    deleteFocus()
+                });
+                $('#button').on('click', function () {
+                    diff()
+                });
+            });
+        </script>
+    </body>
+</html>

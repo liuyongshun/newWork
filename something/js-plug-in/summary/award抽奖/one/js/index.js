@@ -37,13 +37,13 @@ function roll() {
         clearTimeout(lottery.timer);
         lottery.prize = -1;
         lottery.times = 0;
-        click=false;        
+        click=false;
     } else {
         if (lottery.times < lottery.cycle) {
             lottery.speed -= 10;
         } else if (lottery.times === lottery.cycle) {
             var index = Math.random() * (lottery.count) | 0;
-            lottery.prize = index;        
+            lottery.prize = index;
         } else {
             if (lottery.times > lottery.cycle + 10 && ((lottery.prize === 0 && lottery.index === 7) || lottery.prize === lottery.index + 1)) {
                 lottery.speed += 110;
@@ -75,7 +75,7 @@ window.onload=function(){
         } else {
             start.attachEvent("onclick", function() {
                 lottery.speed=100;
-                roll();                
+                roll();
             });
         }
     }

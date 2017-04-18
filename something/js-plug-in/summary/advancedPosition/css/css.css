@@ -1,9 +1,55 @@
-body,ul,li {margin: 0;padding: 0;list-style: none;}
-.in {position: relative;height: 100px;line-height: 18px;font-size: 12px;overflow: hidden;}
-.scroll_list {position: absolute;width: 100%;}
-.scroll_list li {font-size: 12px;overflow: hidden;}
-.lf,.rg {display: block;}
-.lf {float: left;}
-.rg {float: right;}
+/**sass:
+ *$shun: l_;
+ */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.lf {
+    float: left;
+}
+.rg {
+    float: right;
+}
+.in {
+    position: relative;
+    margin:  10px auto;
+    width: 70%;
+    height: 100px;
+    line-height: 18px;
+    font-size: 12px;
+    overflow: hidden;
+}
 
-scroll
+/**sass
+.#{$shun}in {
+     position: relative;
+    margin:  10px auto;
+    width: 70%;
+    height: 100px;
+    line-height: 18px;
+    font-size: 12px;
+    overflow: hidden;
+}
+.#{$shun}scroll_list {
+    position: absolute;
+    width: 100%;
+    li {
+        font-size: 12px;
+        overflow: hidden;
+    }
+}
+ */
+.scroll_list {
+    position: absolute;
+    width: 100%;
+}
+.scroll_list li {
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.lf, .rg {
+    display: block;
+}

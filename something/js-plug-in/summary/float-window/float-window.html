@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title> </title>
+        <style type="text/css">
+            ul, ol, li {list-style-type:none;vertical-align:0}
+            .mmbanImg{z-index: 100; left: 2px; width: 554px; position: absolute; top: 100px; height: 300px; visibility: visible;}
+            .mmbanImg .slideBox{ width:554px; height:300px; overflow:hidden; position:relative; }
+            .mmbanImg .slideBox .hd{ height:15px; overflow:hidden; position:absolute; right:5px; bottom:5px; z-index:1; display:none }
+            .mmbanImg .slideBox .bd{ position:relative; height:100%; z-index:0;   }
+            .mmbanImg .slideBox .bd img{ width:554px; height:300px; display:block;  }
+            .mmClose { position: absolute; z-index: 10; right: 10px; bottom: 10px; cursor: pointer; color: #fff }
+        </style>
+    </head>
+    <body>
+        <!--效果html开始-->
+        <div class="mmbanImg" id="img1">
+            <div class="mmClose">【关闭】</div>
+            <div id="slideBox" class="slideBox">
+                <div class="hd">
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="images/img1.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="images/img2.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="images/img3.jpg"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script language="javascript">
+            (function () {
+                // 速度控制step和delay
+                var obj = document.getElementById("img1"),
+                t = {
+                    x: 54,
+                    y: 300,
+                    xin: true,
+                    yin: true,
+                    step: 1,
+                    delay: 10,
+                    cw: document.documentElement.clientWidth,
+                    ch: document.documentElement.clientHeight,
+                    scrollTop: document.body.scrollTop || document.documentElement.scrollTop,
+                    scrollLeft: document.body.scrollLeft || document.documentElement.scrollLeft
+                }
+
+                function float() {
+                    var L = T = 0,
+                    R = t.cw - obj.offsetWidth,
+                    B = t.ch - obj.offsetHeight;
+
+                    obj.style.left = t.x + t.scrollLeft + 'px';
+                    obj.style.top = t.y + t.scrollTop + 'px';
+
+                    t.x += t.step * (t.xin ? 1 : -1);
+                    if (t.x < L) { t.xin = true; t.x = L};
+                    if (t.x > R){ t.xin = false; t.x = R};
+
+                    t.y += t.step * (t.yin ? 1 : -1);
+                    if (t.y < T) { t.yin = true; t.y = T};
+                    if (t.y > B) { t.yin = false; t.y = B};
+                }
+
+                var itl= setInterval(float, t.delay);
+
+                obj.onmouseover = function () {
+                    clearInterval(itl)
+                }
+                obj.onmouseout = function () {
+                    itl = setInterval(float, t.delay)
+                }
+            })()
+        </script>
+    </body>
+</html>
