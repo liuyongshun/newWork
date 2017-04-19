@@ -1,5 +1,0 @@
-不必要：（canvas适合密集型图像游戏，svg适合最适合带有大型渲染区域的应用程序（比如谷歌地图））
-
-
-必要应用到移动端：localStorage + sessionStorage + 语义化
-

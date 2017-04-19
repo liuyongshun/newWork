@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link  rel="stylesheet" href="css/index.css">
+        <title></title>
+    </head>
+    <body>
+        <h3>利用border撑出三角形</h3>
+        <div class="triangle"></div>
+
+        <!--IE下支持inline转化为inline-block,不支持block转化为inline-block-->
+        <!--=======start========================-->
+        <div class="box">
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        <div class="box">
+            <span class="inline"></span>
+            <span class="inline"></span>
+        </div>
+        <!--=============end========================-->
+
+        <!--==========start max and min================= -->
+        <div class="max-min"></div>
+        <!--===========end max and min================-->
+
+        <!--=======start margin fold==================-->        
+        <!--margin折叠只发生在块级元素上；
+        浮动元素的margin不与任何margin发生折叠；
+        设置了属性overflow且值不为visible的块级元素，将不与它的子元素发生margin折叠；
+        绝对定位元素的margin不与任何margin发生折叠；
+        根元素的margin不与其它任何margin发生折叠；-->
+        <!--==========end margin fold ==================-->
+
+        <!--=================font===================-->
+        <p class="site-font">这是设置字体的测试</p>
+
+
+        <!--select的option的索引-->
+        <select name="" id="select">
+            <option value="">a</option>
+            <option value="">b</option>
+            <option value="">c</option>
+        </select>
+        <script src="js/index.js"></script>        
+    </body>
+</html>
