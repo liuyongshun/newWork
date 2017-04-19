@@ -5,22 +5,22 @@
             // var _w = document.documentElement.clientWidth
             // var _ww = document.body.clientWidth
             // // 浏览器的高度收控制台影响。
-            // console.log( h )   
+            // console.log( h )
             // alert( h )
             // // 浏览器的高度收控制台影响。
-            // console.log( _h )   
+            // console.log( _h )
             // alert( _h )
             // // 这个是body高度，随着页面高度而改变
-            // console.log( _hh )  
+            // console.log( _hh )
             // alert( _hh )
-            // console.log( w )    
-            // console.log( _w )   
-            // console.log( _ww )  
+            // console.log( w )
+            // console.log( _w )
+            // console.log( _ww )
 
             // var sw = screen.availWidth
             // var sh = screen.availHeight
             // console.log( sh )  // 1040
-            // console.log( sw )  //1920            
+            // console.log( sw )  //1920
 
 
         var total = document.documentElement.clientHeight;
@@ -36,7 +36,7 @@
         // } else {
         //     document.getElementById("col1").style.height = mainHeight + "px";
         // }
-        console.log(22222)            
+        console.log(22222)
 
 
-        
+

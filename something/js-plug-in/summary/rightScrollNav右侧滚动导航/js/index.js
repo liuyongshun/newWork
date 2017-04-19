@@ -1,7 +1,7 @@
 $( function() {
     $( '.side_nav' ).hide();
     $( window ).scroll( function () {
-        var ysc = $( window ).scrollTop();   
+        var ysc = $( window ).scrollTop();
         console.log( ysc );
         if ( ysc >= 600 ) {
             $( '.side_nav' ).show();
@@ -13,7 +13,7 @@ $( function() {
             $( '.fix_nav' ).removeClass( 'fix_bg_color' );
             $( '.fix_nav' ).eq( 1 ).addClass( 'fix_bg_color' );
         } else if( ysc >= 2235 && ysc < 3130 ) {
-            $( '.fix_nav' ).removeClass( 'fix_bg_color' );                  
+            $( '.fix_nav' ).removeClass( 'fix_bg_color' );
             $( '.fix_nav' ).eq( 2 ).addClass( 'fix_bg_color' );
         } else if( ysc >= 3130 && ysc < 4470 ) {
             $( '.fix_nav' ).removeClass( 'fix_bg_color' );

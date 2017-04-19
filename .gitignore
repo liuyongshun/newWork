@@ -1,0 +1,17 @@
+/node/two/node_modules 
+/node/two/lib/cookieKey.js
+/node/three/node_modules
+/node/two/public/css/!bootstrap.css
+/node/two/public/js/!bootstrap.js
+/node/three/public/css/!bootstrap.css
+/node/three/public/js/!bootstrap.js
+/node/one/node_modules
+*.zip
+*.jshintrc
+# 忽略了node_modules文件
+# *.zip 过滤所有.zip文件
+# /fileName/do.txt 过滤某个具体文件
+# 前面加!表示只提交该内容
+# !*.zip只提交zip文件
+# doc/*.txt 会忽略 doc/child.txt 但不包括 doc/ddd/descendant.txt
+# build/    忽略 build/ 目录下的所有文件
