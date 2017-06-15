@@ -1,0 +1,132 @@
+﻿body {
+    margin: 0;
+    color: #231816;
+    font-size: 12px;
+    font-family: microsoft yahei, simsun, tahoma, Srial, helvetica, sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #231816;
+}
+a:hover {
+    color: #ff4342;
+}
+.fl {
+    float: left
+}
+.fr {
+    float: right
+}
+/*分类*/
+.all-sort-list {
+    position: relative;
+    width: 222px;
+    border-top: none;
+    background: rgba(255, 255, 255, 0.85);
+    -o-background: rgba(255, 255, 255, 0.85);
+    -ms-background: rgba(255, 255, 255, 0.85);
+    -moz-background: rgba(255, 255, 255, 0.85);
+    -webkit-background: rgba(255, 255, 255, 0.85);
+    background: #fff\0;
+    +background: #fff\0;
+    _background: #fff\0;
+    z-index: 100;
+}
+
+.all-sort-list .item h3 {
+    border-top: 1px solid #f4eded;
+    padding-top: 9px;
+    border-left: 1px solid rgba(255, 255, 255, 0);
+    border-left: 1px solid #fff\0;
+    +border-left: 1px solid #fff\0;
+    _border-left: 1px solid #fff\0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    border-bottom: 1px solid #fff\0;
+    +border-bottom: 1px solid #fff\0;
+    _border-bottom: 1px solid #fff\0;
+    font-size: 12px;
+    font-weight: normal;
+    width: 221px;
+    overflow: hidden;
+    height: 97px;
+}
+
+.all-sort-list .hover h3 {
+    position: relative;
+    z-index: 13;
+    background: #FFF;
+    border-color: #231816;
+    border-width: 1px 0px 1px 1px;
+    border-style: solid;
+}
+
+.all-sort-list .item a:hover {
+    color: #ff4342;
+}
+
+.all-sort-list .item-list {
+    display: none;
+    position: absolute;
+    width: 454px;
+    height: 359px;
+    _height: 296px;
+    overflow: hidden;
+    background: #FFF;
+    left: 221px;
+    box-shadow: 0px 0px 10px #DDDDDD;
+    border: 1px solid #231816;
+    top: 3px;
+    z-index: 10;
+}
+
+.all-sort-list .item-list .close {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    color: #FFFFFF;
+    cursor: pointer;
+    top: -1px;
+    right: -26px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-family: "Microsoft Yahei";
+    background: rgba(0, 0, 0, 0.6);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, startColorstr='#60000000', endColorstr='#60000000');
+}
+
+.item-list .subitem {
+    float: left;
+    width: 440px;
+    padding: 0px 4px 0px 13px;
+}
+
+.item-list .subitem dl {
+    padding: 6px 0px;
+    overflow: hidden;
+    zoom: 1;
+    margin: 0
+}
+
+.item-list .subitem dd {
+    padding: 3px 0px 0px;
+    overflow: hidden;
+    margin-left: -8px;
+}
+
+.item-list .subitem dd em {
+    float: left;
+    height: 17px;
+    line-height: 17px;
+    padding: 0px 8px;
+    margin-top: 7px;
+    font-style: normal;
+}
+.all-sort-list .item h3 .t_bjds a {
+    display: block;
+    padding-left: 13px;
+}

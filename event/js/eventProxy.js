@@ -49,3 +49,21 @@ parent.addEventListener("click", function(e) {
         }
     }
  });
+
+
+/**
+ * return
+ * 1. return false : 可以防止默认的事件行为(a的连接，buton的默认事件); js中阻止表单提交
+ * 2. retrun true； 返回正确的处理结果。
+ */
+
+// 即使a函数返回return false 阻止提交了，但是不影响b()以及c()函数的执行。总之：return false 只在当前函数有效，不会影响其他外部函数的执行。
+function a () {
+    return false;
+}
+function Test () {
+   a();
+   b();
+   c();
+}
+

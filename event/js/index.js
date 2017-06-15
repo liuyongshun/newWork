@@ -15,10 +15,10 @@ var allEvent = {
     addHandler: function(element, type, handler){
         if (element.addEventListener){
             element.addEventListener(type, handler, false);
-        } else if (element.attachEvent){
+        } /*else if (element.attachEvent){
             element.attachEvent("on" + type, handler);
-        } else {
-            element["on" + type] = handler;
+        } */else {
+            element['on' + type] = handler;
         }
     },
     // 兼容IE的事件对象
@@ -65,14 +65,17 @@ var allEvent = {
 //  var oprate = function(e) {
 //      console.log(window);
 //  };
-//  EventUtil.addHandler(getElement, "click", oprate);
+//  allEvent.addHandler(getElement, "click", oprate);
 // })();
 // (function() {
-//  var getElement = document.getElementById("eventObj");
-//  var oprate = function() {
-//      console.log("congrulation");
-//  };
-//  EventUtil.addHandler(getElement, "click", oprate);
+ // var getElement = document.getElementById("parent");
+ // getElement.onclick = function(e) {
+ //    console.log(e || window.event)
+ // }
+ // var oprate = function() {
+ //     console.log("congrulation");
+ // };
+ // allEvent.addHandler(getElement, "click", oprate);
 // }());
 
 
@@ -275,22 +278,22 @@ var allEvent = {
 // 在发生 mouseover 和 mouserout 事件时，还会涉及更多的元素。简单来说就是一个元素触发mouseover就会有别的触发mouseout（相关事件）。
 
 
-var parent3 = document.getElementById("parent");
-allEvent.addHandler(parent3, "click", function(event){
-    event = allEvent.getEvent(event);
-    var keys = new Array();
-    if (event.shiftKey){
-        keys.push("shift");
-    }
-    if (event.ctrlKey){
-        keys.push("ctrl");
-    }
-    if (event.altKey){
-        keys.push("alt");
-    }
-    if (event.metaKey){
-        keys.push("meta");
-    }
-    console.log("Keys: " + keys.join(","));
-});
+// var parent3 = document.getElementById("parent");
+// allEvent.addHandler(parent3, "click", function(event){
+//     event = allEvent.getEvent(event);
+//     var keys = new Array();
+//     if (event.shiftKey){
+//         keys.push("shift");
+//     }
+//     if (event.ctrlKey){
+//         keys.push("ctrl");
+//     }
+//     if (event.altKey){
+//         keys.push("alt");
+//     }
+//     if (event.metaKey){
+//         keys.push("meta");
+//     }
+//     console.log("Keys: " + keys.join(","));
+// });
 

@@ -5,17 +5,21 @@
         <title></title>
         <meta name="keywords" content="">
         <meta name="description" content="">
-        <script src="js/jq.js"></script>
     </head>
     <body>
         <button id="btn">确认</button>
-        <div id="content">关联按钮的内容</div>
-        <div class="lll">1</div>
-        <div class="lll">2</div>
-        <div class="lll">3</div>
-        <div class="lll">4</div>
+        <!-- <div id="content">关联按钮的内容</div> -->
+        <div class="lll" name="liu">1</div>
+        <div class="lll" name="liu">2</div>
+        <div class="lll" name="liu">3</div>
+        <div class="lll" name="liu">4</div>
+        <!-- <script src="js/jq.js"></script> -->
         <script type="text/javascript">
-          $(".lll").hide();
+            console.log(document.querySelectorAll('.lll'))
+            console.log(document.getElementsByClassName('lll'))
+            console.log(document.getElementsByTagName('div'))
+            console.log(document.getElementsByName('liu'))
+            console.log(document.getElementById('btn'))
         </script>
     </body>
 </html>

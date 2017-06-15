@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 数组，对象，字符串常用方法
+
+        // const obj = {
+        //     x: 3,
+        //     y: "liu"
+        // }
+        // const arr = [1, 2, 3, 11];
+        // let baseString = 'hello world';
+        // let NUMString = '1 2 3 4';
+        // let literal = 0;
+
+        // // 1.JSON.stringify(obj)
+        // const string = JSON.stringify(obj);
+        // console.log(string);
+
+        // // 2.JSON.parse(string) IE7不支持。
+        // const reverse = JSON.parse(string);
+        // console.log(reverse);
+
+        // // 3.toString()和toLocaleString(),没有参数,只在时间处理上有区别。(数组转化为字符串)
+        // var date = new Date();
+        // console.log(date.toString());
+        // console.log(date.toLocaleString());
+
+        // // 4.toJSON(),JSON.stringify()会调用toJSON()方法。
+
+        // // 5.valueOf(),类似toString(),往往对象需要转化为某种原始值时才会调用。
+        // console.log(date.valueOf());
+
+        // // 6.push()和pop(),push()末尾添加一个或多个元素，返回新的长度;pop()删除并返回最后一个元素
+        // arr.push('end');
+        // console.log(arr);
+        // arr.pop();
+        // console.log(arr);
+
+        // // 7.unshift()和shift(),unshift()开头添加一个或更多元素，并返回新的长度; shift()第一个元素从其中删除，并返回第一个元素的值
+        // arr.unshift('head');
+        // console.log(arr);
+        // arr.shift();
+        // console.log(arr);
+
+        // // 8.for in  key是数组索引（或对象属性）;
+        // for(key in arr) {
+        //     console.log(key);
+        // }
+
+        // // 9.forEach() IE7不支持。为数组每一个元素指定函数
+        // arr.forEach(function(x) {
+        //     literal += x * x;
+        // });
+        // console.log(literal);
+
+        // // 10.join(),数组转字符串，并指定分隔符拼接。
+        // console.log(arr.join('-'));
+
+        // // 11.reserve(),将数组顺序颠倒。
+        // console.log(arr.reverse());
+        // console.log(arr.reverse().join('-'));
+
+        // // 12.sort(),将数组元素排序，不带参数时，按字母顺序表排序(按照字符编码的顺序进行排序)。
+        // let stringARR = ['Cat', 'pig', 'Dog'];
+        // console.log(arr.sort(function(a, b) {
+        //     return a - b;
+        // }));
+        // // 不区分大小写排序。
+        // console.log(stringARR.sort(function(x, y) {
+        //     let a = x.toLowerCase();
+        //     let b = y.toLowerCase();
+        //     if(a < b) return -1;
+        //     if(a > b) return 1;
+        //     return 0;
+        // }));
+
+        // // 13.concat(),连接两个或多个数组(字符串也可以)
+        // console.log(arr.concat(stringARR));
+        // console.log(arr.concat(baseString));
+
+        // // 14.slice(),返回一个数组（字符串）的子片段，两个参数：开始（必须），结束；-1是从后往前。
+        // console.log(arr.slice(1, 3));
+        // console.log(arr.slice(-3, -1));
+        // console.log(baseString.slice(1, 7));
+        // console.log(baseString.slice(-7, -1));
+
+        // // 15.splice(),参数：添加/删除项目的位置(必须);要删除的项目数量(必须),设为 0，不会删除; 向数组添加的新项目(可选);  会改变原来的数组
+        // console.log(arr.splice(1, 1 , 'add'));
+        // console.log(arr);
+
+        // // 16.indexOf()和lastIndexOf(),字符串或数组查找匹配元素,返回索引值，不存在返回-1;lastIndexOf()从尾部开始查找
+        // console.log(baseString.indexOf('f'));
+        // console.log(arr.indexOf(11));
+    </script>
+
+    <script type="text/javascript">
+        // // 数字量方法
+
+        // // 1.Math.pow(2, 53); 幂函数。
+        // console.log(Math.pow(2, 4));  // 16
+        // console.log(Math.pow(27, 1 / 3));  // 3 相当于立方根。
+
+        // // 2.Math.round(.6); 四舍五入。
+        // console.log(Math.round(.5));  // 1
+
+        // // 3.Math.ceil(.3); 向上取整。
+        // console.log(Math.ceil(.3)); // 1
+
+        // // 4.Math.floor(.3); 向下取整。
+        // console.log(Math.floor(.8)); // 0
+
+        // // 5.Math.abs(-3); 绝对值。
+        // console.log(Math.abs(-3)); // 3
+
+        // // 6.Math.max(1, 3, 8); 最大值。
+        // console.log(Math.max(1, 3, 8)); // 8
+
+        // // 7.Math.min(1, 3, 8); 最小值。
+        // console.log(Math.min(1, 3, 8)); // 1
+
+        // // 8.Math.random(); 随机数。
+        // console.log(Math.random()); //
+
+        // // 9.Math.PI; π。
+        // console.log(Math.PI);
+
+        // // 10.Math.E; 自然对数底数。
+        // console.log(Math.E); //
+
+        // // 11.Math.sqrt(4); 平方根。
+        // console.log(Math.sqrt(4)); // 2
+
+        // // 12.Math.log(3); 3自然对数。
+        // console.log(Math.log(10)); //
+    </script>
+
+    <script type="text/javascript">
+        // 字符串
+        // let string = 'hello woRld';
+
+        // // 1.charAt(); 根据索引返回字符。
+        // console.log(string.charAt(6));
+
+        // // 2.substring(); 获得子字符串，同slice();
+        // console.log(string.substring(2, 7));
+
+        // // 3.split(); 字符串转化为数组，设置操作符截取字符串。
+        // console.log(string.split(' '));
+
+        // // 4.replace(); 参数：第一个：已存在的内容，第二个：用来替换
+        // console.log(string.replace('ll', 'LL'));
+
+        // // 5.toUpperCase();转化为大写
+        // console.log(string.toUpperCase());
+
+        // // 6.toLowerCase();转化为小写
+        // console.log(string.toLowerCase());
+    </script>
+
+    <script type="text/javascript">
+        // 正则
+        // g: match global
+        // m: match multi-line
+        // i: don't indentify upper case or lower case
+
+        let str = "Visit W3CSchool Visit W3CSchool Visit W3CSchool blue";
+        let patt1=/w3cschool/ig;
+
+        // 1. strObj.replace(/blue/ig,"red");
+        var n = str.replace(/blue/gi,"red");
+        console.log(n);
+
+        // 2. strObj.match(regExp)
+        console.log(str.match(patt1));
+
+        // 3. regExp.test(strObj)
+        console.log(patt1.test(str));
+
+        // 4. regExp.exec(strObj)
+        console.log(patt1.exec(str));
+
+        // 5. strObj.search(regExp)
+        console.log(str.search(patt1));
+
+        // 6. regExp.compile(strObj);
+        console.log(patt1.search(str));
+    </script>
+</body>
+</html>

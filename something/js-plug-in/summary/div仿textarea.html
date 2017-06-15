@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 	<div contenteditable="true" id="text" style="border: 1px solid #ddd;width: 500px;height: 150px;padding: 4px 0 0 4px;">sfsfsf</div> -->
+<textarea id="text"></textarea>
+	<div id="dd"></div>
+	<button id="btn">fsfs</button>
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		btn.addEventListener('click',  function () {
+			var value = document.getElementById('text').value;
+			console.log(value)
+			var newValue = value.replace(/\n/g,'<br>');
+			console.log(newValue)
+			document.getElementById('dd').innerHTML = newValue;
+		})
+
+
+
+		// var obj = {
+		// 	ns: function() {
+		// 		var a = 1;
+		// 		console.log(a)
+		// 	}
+		// }
+		// function aa(arg) {
+		// 	console.log(this)
+		// 	arg.nss()
+		// }
+
+		// aa(obj)
+	</script>
+</body>
+</html>

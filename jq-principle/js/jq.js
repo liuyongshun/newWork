@@ -138,7 +138,7 @@ var $ = function(selector, context) {
 }
 $.fn = $.prototype;
 $.fn.each = function(fn) {
-    console.log(this)
+    // console.log(this)
     var i=0, length = this.length;
     for (; i<length; i+=1) {
         fn.call(this[i], i);
@@ -152,7 +152,7 @@ $.fn.hide = function() {
     return this;
 };
 $.fn.init = function(selector, context) {
-    console.log(this)
+    // console.log(this)
     var nodeList = (context || document).querySelectorAll(selector);
     this.length = nodeList.length;
     for (var i = 0; i < this.length; i++) {
@@ -164,7 +164,7 @@ $.fn.show = function() {
     this.each(function() {
         this.style.display = "block";
     })
-    console.log(this)
+    // console.log(this)
     return this;
 }
 // 上边实现了实例$.fnd的init方法，此时this指向init，而其他方法都在$.fn上，为了可以应用其他方法，将init的prototype指向了$.fn（即$.prototype）
@@ -173,7 +173,8 @@ $.fn.show = function() {
 // 在原型上设置方法，不是函数声明，没有提升效果。所以这句话必须放在最下边。
 $.fn.init.prototype = $.fn;
 
-
+console.log($('.lll'))
+console.log($("#btn"))
 
 
 

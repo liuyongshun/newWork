@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="renderer" content="webkit"/>
+        <link href="asset/css.css" rel="stylesheet"/>
+        <script src="asset/jquery-1.9.1.js"></script>
+        <title> </title>
+    </head>
+    <body>
+        <div class="all-sort-list fl" style="height:361px;">
+            <div class="item bo">
+                <h3>
+                    <span style="padding-left:10px; overflow:hidden; display:block; line-height:18px">
+                        <img src="" style="padding-right:5px; float:left;"/>
+                        <a class="t_tls" href="" target="_blank" style="float:left">耐火原料</a>
+                    </span>
+                    <div class="t_bjds">
+                        <a href="" target="_blank">铝硅质耐火原料</a>
+                    </div>
+                </h3>
+                <div class="item-list clearfix" style="top: 0px; display: none;">
+                    <div class="subitem">
+                        <dl>
+                            <dt>
+                                <a href="" target="_blank">铝硅质耐火原料</a>
+                            </dt>
+                            <dd>
+                                <em>
+                                    <a href="" target="_blank">棕刚玉与</a>
+                                </em>
+                            </dd>
+                        </dl>
+                        <span style="float: left; padding: 0; display: block;">&nbsp;&nbsp;在线QQ：</span>
+                    </div>
+                </div>
+            </div>
+            <!--一级分类- 第2个-->
+            <div class="item">
+                <h3>
+                    <span style="padding-left:10px; overflow:hidden; display:block; line-height:18px">
+                        <img src="" style="padding-right:5px; float:left;"/>
+                        <a class="t_tls" href="" target="_blank" style="float:left">耐火制品</a>
+                    </span>
+                    <div class="t_bjds">
+                        <a href="" target="_blank">不定形耐火材料</a>
+                    </div>
+                </h3>
+                <div class="item-list clearfix" style="top: 0px; display: none;">
+                    <div class="subitem">
+                        <dl>
+                            <dt>
+                                <a href="" target="_blank">致密定型耐火制品</a>
+                            </dt>
+                            <dd>
+                                <em>
+                                    <a href="" target="_blank">水泥窑用抗剥落高铝砖</a>
+                                </em>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!--一级分类- 第3个-->
+            <div class="item">
+                <h3 class="j_lastest">
+                    <span style="padding-left:10px; overflow:hidden; display:block; line-height:18px">
+                        <img src="" style="padding-right:5px; float:left;" alt=""/>
+                        <a class="t_tls" href="" target="_blank" style="float:left">冶金辅料</a>
+                    </span>
+                    <div class="t_bjds">
+                        <a href="" target="_blank">脱氧剂</a>
+                    </div>
+                </h3>
+                <div class="item-list clearfix" style="top: 0px; display: none;">
+                    <div class="subitem">
+                        <dl>
+                            <dt>
+                                <a href="" target="_blank">脱氧剂</a>
+                            </dt>
+                            <dd>
+                                <em>
+                                    <a href="" target="_blank">AD粉</a>
+                                </em>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--产品分类飘窗-->
+        <script type="text/javascript">
+                    $('.all-sort-list > .item').hover(function () {
+
+                        var eq = $('.all-sort-list > .item').index(this),
+                            h = $('.all-sort-list').offset().top,
+                            s = $(window).scrollTop(),
+                            i = $(this).offset().top,
+                            item = $(this).children('.item-list').height(),
+                            wh = $(window).height();
+
+                        var tempTop = i - h + (eq == 0 ? 0 : 1);
+                        if (i + item > s + wh)
+                            tempTop -= (i + item) - (s + wh) + 5;
+                        if (tempTop + h <s)
+                            tempTop = s - h
+
+
+                        $(this).children('.item-list').css('top', 0);
+                        $(this).addClass('hover');
+                        $(this).children('.item-list').css('display', 'block');
+
+                    }, function () {
+
+                        $(this).removeClass('hover');
+                        $(this).children('.item-list').css('display', 'none');
+
+                    });
+
+                    $('.item > .item-list > .close').click(function () {
+
+                        $(this).parent().parent().removeClass('hover');
+                        $(this).parent().hide();
+
+                    });
+                </script>
+    </body>
+</html>

@@ -17,6 +17,6 @@ setTimeout(function() {
     ,1000)
 }
 
-for (i = 0; i < 10; i++) {
-    setTimeout((function() {console.log(i)})(),0);
-}
+// for (i = 0; i < 10; i++) {
+//     setTimeout((function() {console.log(i)})(),0);
+// }

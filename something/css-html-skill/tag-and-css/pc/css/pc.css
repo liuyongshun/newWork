@@ -32,7 +32,7 @@ input { /* 1 */
 }
 
 /*禁止文本域拉伸*/
-textarea { 
+textarea {
     resize: none;
 }
 
@@ -174,7 +174,7 @@ input[type="radio"] {
 * 1. 去除 IE6-9 和 Firefox 3 中 a 内部 img 元素默认的边框
 * 2. 修正 IE8 图片消失bug （未知）
 * 3. 防止 img 指定「height」时图片高度不能按照宽度等比缩放，导致图片变形（未知）
-* 4. 让图片支持响应式 
+* 4. 让图片支持响应式
 * 5. 去除现代浏览器图片底部的空隙 (inline-block的5像素问题)
 * 6. 修复 IE7 图片缩放失真  （未知）
 */
@@ -216,7 +216,7 @@ img {
 /*系统自动检测换行*/
 .auto_line {
     word-wrap: break-word;
-    word-break: normal; 
+    word-break: normal;
 }
 
 /*强制换行*/
@@ -235,7 +235,7 @@ img {
 
 /*透明效果兼容IE（按钮悬浮透明效果）*/
 .btn_hover {
-    opacity: .4; 
+    opacity: .4;
     filter:alpha(opacity=40);
 }
 
@@ -245,7 +245,7 @@ img {
     height: 7px;
     color: #999;
     border-top: 18px double;
-    border-bottom: 6px solid;    
+    border-bottom: 6px solid;
 }
 
 /*inline-block空白像素问题，IE7不支持block变成inline-block，而inline变成inline-block没有这个距离问题*/
@@ -262,7 +262,7 @@ img {
   *word-spacing: -1px;
   /* IE6、7 */
   height: 100%;
-  /* 继承父级高度 */        
+  /* 继承父级高度 */
 }
 /*方法五：父元素设置如下*/
 .clear_space_3 {
@@ -300,13 +300,13 @@ input[disabled] {
 
 /*选择器支持IE7+*/
 
-/* 相邻选择符(E+F) */ 
-p+p 
-/* 兄弟选择符(E~F) */ 
+/* 相邻选择符(E+F) */
+p+p
+/* 兄弟选择符(E~F) */
 p~p
-/* 子代选择符(E~F) */ 
+/* 子代选择符(E~F) */
 p>p
 /*属性选择器*/
-input[type="text"] 
+input[type="text"]
 /*第一个子元素,（last不可用）*/
 p:first-child
