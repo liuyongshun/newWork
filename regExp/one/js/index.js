@@ -1,7 +1,7 @@
 /**
  * regExp
- * 1.g: match global  
- * 2.m: match multi-line 
+ * 1.g: match global
+ * 2.m: match multi-line
  * 3.i: don't indentify upper case or lower case
  * =============================================
  * method && rule:
@@ -19,7 +19,7 @@
 // console.log(patt1.test(str));    // true
 // console.log(patt1.exec(str));    // ["W3CSchool"] PS: just match once,if want to get all, you have to call time after time.
 // console.log(str.search(patt1));  // 6
-// console.log(n);                  // Visit W3CSchool Visit W3CSchool Visit W3CSchool red 
+// console.log(n);                  // Visit W3CSchool Visit W3CSchool Visit W3CSchool red
 
 // // Achieve by new regExp
 // var patt2 = new RegExp('w3cschool','ig');
@@ -56,7 +56,7 @@
 
     //     getSelect: document.getElementById( 'judges' ),
     //     getValue: document.getElementById( 'text' ),
-        
+
     //     method: function() {
     //         var that = this;
     //         if( !document.addEventListener ) {
@@ -68,11 +68,11 @@
     //             if ( !check ) {
     //                 // 换成现在用的提示效果
     //                 alert( 'format error' );
-    //             }           
-    //         } );                         
+    //             }
+    //         } );
     //         } else {
     //             this.getSelect.addEventListener( 'click', function() {
-    //             var str = that.getValue.value;          
+    //             var str = that.getValue.value;
     //             var patt = that.Money;
     //             var check = str.match( patt );
     //             console.log(check)
@@ -80,7 +80,7 @@
     //                 // 换成现在用的提示效果
     //                 alert( 'format error1' );
     //             }
-    //         } );   
+    //         } );
     //         }
     //     }
     // };
@@ -91,7 +91,7 @@
 
 
 // // ====================practice rank========================================================
-var str = "hat hot my telephone is 12202345672  10 email: liulfjs@126.com \n liuyongshun this his at"; 
+var str = "hat hot my telephone is 12202345672  10 email: liulfjs@126.com \n liuyongshun this his at";
 // // search 括号内任意字符，为设置g时，找到ema中的任何一个都会停止。
 // var patt = /[ema]/;
 // console.log( str.match( patt ) );
@@ -161,3 +161,14 @@ var str = "hat hot my telephone is 12202345672  10 email: liulfjs@126.com \n liu
 // console.log( str.match( patt10 ) );
 // var patt11 = /h(?:at|ot)/g;
 // console.log( str.match( patt11 ) );
+//
+
+
+// ?: ?= ?!  非捕获元字符。
+// ()圆括号内匹配会默认缓存储到一个临时缓冲区，按照在正则表达式模式中从左到右出现的顺序存储。从 1 开始，最多可存储 99 个捕获的子表达式。
+// 访问：\n (n代表标识特定缓冲区的一位或两位十进制数；即1-99)
+// var zz = 'industryy';
+// var reg = /industr(y|ies)\1/gi;
+// var reg2 = /industr(?=y|ies)\1/gi;
+// console.log(reg.test(zz));
+// console.log(reg2.test(zz));
