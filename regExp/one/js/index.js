@@ -176,6 +176,16 @@ var str = "hat hot my telephone is 12202345672  10 email: liulfjs@126.com \n liu
 
 
 // \B和\b  : \b匹配一个字边界，即字与空格间的位置 \B反之不匹配边界
-var str = "Is is the cost of of gasoline going up up";
-var patt1 = /([a-z]+)\b \b\1/ig;
-console.log(str.match(patt1));
+// var str = "Is is the cost of of gasoline going up up";
+// var patt1 = /([a-z]+)\b \b\1/ig;
+// console.log(str.match(patt1));
+
+
+// 运算优先级：
+/**
+ * 1. \ : 转义符
+ * 2. (), (?:), (?=), [] : 圆括号和方括号
+ * 3. *, +, ?, {n}, {n,}, {n,m} : 限定符
+ * 4. ^, $, \任何元字符、任何字符 : 定位点和序列（即：位置和顺序）
+ * 5. | : "或"操作
+ */
