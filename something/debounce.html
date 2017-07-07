@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<div style="height: 4000px;"></div>
+  <script type="text/javascript">
+    function Throttle (func, wait, mustRun) {
+
+        var timeout,
+            startTime = new Date();
+
+        return function() {
+
+            // this 指向window，arguments是ansyno
+            var context = this,
+                args = arguments,
+                curTime = new Date();
+            clearTimeout(timeout);
+
+            if (curTime - startTime >= mustRun) {
+
+                // apply的作用是将func方法放到当前的上下文上执行,(执行函数或方法)
+                func.apply(context,args);
+                startTime = curTime;
+
+            } else {
+
+                timeout = setTimeout(func, wait);
+
+            }
+
+        };
+
+    };
+
+    function realFunc () {
+
+      console.log(33);
+
+    }
+
+
+    window.addEventListener('scroll',Throttle(realFunc, 500, 1000));
+
+  </script>
+</body>
+</html>
