@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -7,43 +7,75 @@
 <body>
 <div style="height: 4000px;"></div>
   <script type="text/javascript">
-    function Throttle (func, wait, mustRun) {
+    // function Throttle (func, wait, mustRun) {
 
-        var timeout,
-            startTime = new Date();
+    //     var timeout,
+    //         startTime = new Date();
+    //         console.log(startTime)
+    //     return function() {
 
-        return function() {
+    //         // this 指向window，arguments是ansyno
+    //         var context = this,
+    //             args = arguments,
+    //             curTime = new Date();
+    //         clearTimeout(timeout);
+    //         console.log(curTime);
+    //         if (curTime - startTime >= mustRun) {
 
-            // this 指向window，arguments是ansyno
-            var context = this,
-                args = arguments,
-                curTime = new Date();
-            clearTimeout(timeout);
+    //             // apply的作用是将func方法放到当前的上下文上执行,(执行函数或方法)
+    //             func.apply(context,args);
+    //             startTime = curTime;
 
-            if (curTime - startTime >= mustRun) {
+    //         } else {
 
-                // apply的作用是将func方法放到当前的上下文上执行,(执行函数或方法)
-                func.apply(context,args);
-                startTime = curTime;
+    //             timeout = setTimeout(func, wait);
 
-            } else {
+    //         }
 
-                timeout = setTimeout(func, wait);
+    //     };
 
-            }
+    // };
 
-        };
+    // function realFunc () {
 
-    };
+    //   console.log("ddd");
 
-    function realFunc () {
-
-      console.log(33);
-
-    }
+    // }
 
 
-    window.addEventListener('scroll',Throttle(realFunc, 500, 1000));
+    // window.addEventListener('scroll',Throttle(realFunc, 500, 1000));
+
+
+
+function debounce (fn, delay) {
+
+  // 维护一个 timer
+  let timer = null;
+
+  return function () {
+
+    // 通过 ‘this’ 和 ‘arguments’ 获取函数的作用域和变量
+    let context = this;
+    let args = arguments;
+
+    clearTimeout(timer);
+    timer = setTimeout(function() {
+
+      fn.apply(context, args);
+
+    }, delay);
+
+  };
+
+}
+
+function foo() {
+
+  console.log('You are scrolling!');
+
+}
+
+window.addEventListener('scroll', debounce(foo, 1000));
 
   </script>
 </body>
