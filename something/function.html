@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div style="height: 3000px"></div>
+  <script type="text/javascript">
+  // 将obj中自己的属性存入数组。 /*optional*/表示可选
+  // 当函数实参可选时，往往传入一个无意义的占位符，惯用null。也可以用undefined
+  function getPropertyNames (obj, /*optional*/arr) {
+
+    // if这里可以巧写为。arr = arr || [];
+    if (arr === undefined) {
+
+      arr = [];
+
+    }
+    for (var property in obj) {
+
+      if(obj.hasOwnProperty(property)) {
+
+        // 这里不能用打点方式访问，property是变量，需要用[]
+        // arr.push(obj[property]);
+        arr.push(property);
+
+      }
+
+    }
+
+    return arr;
+
+  }
+  console.log(getPropertyNames({a: 3, b: 4}))
+  </script>
+
+  <script type="text/javascript">
+    var ar = [];
+
+    // browser compatibility IE9+
+    console.log(Array.isArray(ar));
+
+    console.log(isFinite(3))
+    console.log(typeof [])
+    console.log(typeof {})
+    console.log(typeof function aa() {})
+  </script>
+
+  <script type="text/javascript">
+  // 将自身作为数组，缓存上一次数据（可能类似jq的each）
+    function obj (n) {
+
+      if (isFinite(n) && n > 0 && n == Math.round(n)) {
+
+        if (!(n in obj)) {
+
+          obj[n] = n * obj(n - 1);
+
+        }
+
+        return obj[n];
+
+      }
+
+      return NaN;
+
+    }
+    obj[1]= 1;
+    obj(5);
+    console.dir(obj)
+  </script>
+
+  <script type="text/javascript">
+    function add () {
+      console.log(3);
+    }
+    // 第二个参数
+    window.addEventListener('scroll', add);
+  </script>
+</body>
+</html>

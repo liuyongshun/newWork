@@ -7,75 +7,75 @@
 <body>
 <div style="height: 4000px;"></div>
   <script type="text/javascript">
-    // function Throttle (func, wait, mustRun) {
+    function Throttle (func, wait, mustRun) {
 
-    //     var timeout,
-    //         startTime = new Date();
-    //         console.log(startTime)
-    //     return function() {
+        var timeout,
+            startTime = new Date();
+            console.log(startTime);
+        return function() {
 
-    //         // this 指向window，arguments是ansyno
-    //         var context = this,
-    //             args = arguments,
-    //             curTime = new Date();
-    //         clearTimeout(timeout);
-    //         console.log(curTime);
-    //         if (curTime - startTime >= mustRun) {
+            // this 指向window，arguments是ansyno
+            var context = this,
+                args = arguments,
+                curTime = new Date();
+            clearTimeout(timeout);
+            // console.log(curTime);
+            if (curTime - startTime >= mustRun) {
 
-    //             // apply的作用是将func方法放到当前的上下文上执行,(执行函数或方法)
-    //             func.apply(context,args);
-    //             startTime = curTime;
+                // apply的作用是将func方法放到当前的上下文上执行,(执行函数或方法)
+                func.apply(context,args);
+                startTime = curTime;
 
-    //         } else {
+            } else {
 
-    //             timeout = setTimeout(func, wait);
+                timeout = setTimeout(func, wait);
 
-    //         }
+            }
 
-    //     };
+        };
 
-    // };
+    };
 
-    // function realFunc () {
+    function realFunc () {
 
-    //   console.log("ddd");
+      console.log("ddd");
 
-    // }
+    }
+
+//  这里Throttle(realFunc, 500, 1000)只调用了一次，scroll触发的是闭包，每次滚动都执行闭包。
+    window.addEventListener('scroll',Throttle(realFunc, 500, 1000));
 
 
-    // window.addEventListener('scroll',Throttle(realFunc, 500, 1000));
 
+// function debounce (fn, delay) {
 
+//   // 维护一个 timer
+//   let timer = null;
 
-function debounce (fn, delay) {
+//   return function () {
 
-  // 维护一个 timer
-  let timer = null;
+//     // 通过 ‘this’ 和 ‘arguments’ 获取函数的作用域和变量
+//     let context = this;
+//     let args = arguments;
 
-  return function () {
+//     clearTimeout(timer);
+//     timer = setTimeout(function() {
 
-    // 通过 ‘this’ 和 ‘arguments’ 获取函数的作用域和变量
-    let context = this;
-    let args = arguments;
+//       fn.apply(context, args);
 
-    clearTimeout(timer);
-    timer = setTimeout(function() {
+//     }, delay);
 
-      fn.apply(context, args);
+//   };
 
-    }, delay);
+// }
 
-  };
+// function foo() {
 
-}
+//   console.log('You are scrolling!');
 
-function foo() {
+// }
 
-  console.log('You are scrolling!');
-
-}
-
-window.addEventListener('scroll', debounce(foo, 1000));
+// window.addEventListener('scroll', debounce(foo, 1000));
 
   </script>
 </body>
