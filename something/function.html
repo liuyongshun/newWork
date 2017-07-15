@@ -78,5 +78,67 @@
     // 第二个参数
     window.addEventListener('scroll', add);
   </script>
+
+  <script type="text/javascript">
+    function counter (n) {
+
+      return {
+        get count () {
+          return n++;
+        },
+        set count (m) {
+          if (m >= n) {
+            n = m;
+          } else {
+            throw Error('error');
+          }
+        }
+      }
+
+    }
+
+    var c = counter(1000);
+    console.log(c.count);
+    console.log(c.count);
+    console.log(c.count);
+    console.log(c.count);
+  </script>
+
+  <script type="text/javascript">
+    function Foo () {this.c = 5}
+
+    // Foo.prototype = {
+    //   name: 'liu',
+    //   method: function () {}
+    // }
+
+    Foo.prototype.name = 'yong';
+    Foo.prototype.method = function () { return 1};
+
+    var b = {a: 3}
+    var f = new Foo();
+
+    // console.log(b.prototype);
+    console.dir(f);
+    // console.log(Object.prototype.__proto__)
+  </script>
+
+  <script type="text/javascript">
+    function Foo(y) {
+      this.y = y;
+    }
+
+    Foo.prototype.x = 10;
+
+    Foo.prototype.calculate = function (z) {
+      return this.x + this.y + z;
+    };
+
+    var b = new Foo(20);
+    var c = new Foo(30);
+
+    b.calculate(30); // 60
+    c.calculate(40);
+  </script>
 </body>
 </html>
