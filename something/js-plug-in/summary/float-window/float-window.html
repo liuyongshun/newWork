@@ -56,7 +56,7 @@
                     xin: true,
                     yin: true,
                     step: 1,
-                    delay: 10,
+                    delay: 15,
                     cw: document.documentElement.clientWidth,
                     ch: document.documentElement.clientHeight,
                     scrollTop: document.body.scrollTop || document.documentElement.scrollTop,
@@ -73,7 +73,7 @@
 
                     t.x += t.step * (t.xin ? 1 : -1);
                     if (t.x < L) { t.xin = true; t.x = L};
-                    if (t.x > R){ t.xin = false; t.x = R};
+                    if (t.x > R) { t.xin = false; t.x = R};
 
                     t.y += t.step * (t.yin ? 1 : -1);
                     if (t.y < T) { t.yin = true; t.y = T};
