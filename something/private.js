@@ -19,11 +19,11 @@
     },
     /**
      * mui的picker的数据的属性必须用text。封装一个属性替换的函数。该函数可以自定义替换和被替换内容。
-     * @param {[Array, Object, string]}   data
-     * @param {string}                    target                   [The original content]
-     * @param {string}                    dest                     [The objective content]
-     * @param {function}                  modifyDataForPicker
-     * @return {[Array, Object, string]}                           [destination string]
+     * @param {[Array, Object, String]}   data
+     * @param {String}                    target                   [The original content]
+     * @param {String}                    dest                     [The objective content]
+     * @param {Function}                  modifyDataForPicker
+     * @return {[Array, Object, String]}                           [destination string]
      */
     modifyDataForPicker: function (data, target, dest) {
 
@@ -48,12 +48,43 @@
     },
     /**
      * remove white space
-     * @param  {string} str [The original string]
-     * @return {string}     [The objective string]
+     * @param  {String} str [The original string]
+     * @param  {Number} type [trim type: 1: clear all; 2: start and end; 3:start; 4:end;]
+     * @return {String}     [The objective string]
      */
-    trim: function (str) {
-      return str.replace(/(^\s*)|(\s*$)/g, "");
+    trim: function (str, type) {
+
+      switch (type){
+
+          case 1:
+          return str.replace(/\s+/g,"");
+          case 2:
+          return str.replace(/(^\s*)|(\s*$)/g, "");
+          case 3:
+          return str.replace(/(^\s*)/g, "");
+          case 4:
+          return str.replace(/(\s*$)/g, "");
+          default:
+          return str;
+
+      }
+
+    },
+    toggleCase: function (str, type) {
+
+      switch (type) {
+
+        case 1:
+        return str.toUpperCase();
+        case 2:
+        return str.toLowerCase();
+
+        default:
+        return str;
+      }
+
     }
+
 
   };
 
