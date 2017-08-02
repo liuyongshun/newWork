@@ -220,19 +220,23 @@
 
 
         //
-        var arr = [2, 6, 4, 9, 0, 1, 5, 9, 7];
-        var b;
-        for (var j = 0; j < arr.length; j ++ ) {
-            for(var i = j; i < arr.length; i ++) {
-                if (arr[j] < arr[i]) {
-                    b = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = b;
-                } else {
-                    continue;
-                }
-            }
-        }
+        // var arr = [2, 6, 4, 9, 0, 1, 5, 9, 7];
+        // var b;
+        // for (var j = 0; j < arr.length; j ++ ) {
+        //     for(var i = j; i < arr.length; i ++) {
+        //         if (arr[j] < arr[i]) {
+        //             b = arr[i];
+        //             arr[i] = arr[j];
+        //             arr[j] = b;
+        //         } else {
+        //             continue;
+        //         }
+        //     }
+        // }
+
+        var patt = /\\./g;
+        var str = 'fsfsf.sfsf';
+        console.log(patt.test(str));
     </script>
 </body>
 </html>
