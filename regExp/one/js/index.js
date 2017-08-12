@@ -194,14 +194,25 @@ var str = "hat hot my telephone is 12202345672  10 email: liulfjs@126.com \n liu
 
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// var str = 'liu "yong" yong shun ';
+// var str = 'liu "yong!" yong! shun ';
 /**
  * 正则中，使用圆括号的子表达式带有从左到右的索引编号。如果replace中出现$+数字，那么replace将用指定的子表达式代替该字符。
  * 引号替换,1. 以双引号开始，以双引号结束；2. 引号内没有引号
  * @param {RegExp} q;
  * @param {[string} str;
  * \1 再次匹配第一个圆括号内的匹配规则，$1代表第一个整个圆括号；
+ * $1、$2、...、$99   与 regexp 中的第 1 到第 99 个子表达式相匹配的文本。
+ * $&  与 regexp 相匹配的子串。
+ * $`  位于匹配子串左侧的文本。
+ * $'  位于匹配子串右侧的文本。
+ * $$  直接量符号。
  */
-// var q = /"([^"]*)" \1/g;
+// var q = /"([a-z]+\!)" \1/g;
 // console.log(q.test(str));
-// console.log('fsf "fsf"'.replace(q, '“$1”'));
+// 一个单词连续出现的位置。
+var z = /\b([a-z]+) \1\b/gi;
+// 3 fafs 互换
+var q = /(\d)\b ([a-z]+)/g;
+console.log('3 fafs'.replace(q, '$2 $1'));
+console.log('3sfsf fafs'.replace(q, '\\$&'));
+
