@@ -15,7 +15,14 @@
 //   };
 
 //   STR.fn = STR.prototype = {
-
+    /**
+     * mui的picker的数据的属性必须用text。封装一个属性替换的函数。该函数可以自定义替换和被替换内容。
+     * @param {[Array, Object, String]}   data
+     * @param {String}                    target                   [The original content]
+     * @param {String}                    dest                     [The objective content]
+     * @param {Function}                  modifyDataForPicker
+     * @return {[Array, Object, String]}                           [destination string]
+     */
 //     init: function () {
 
 //       return this;
@@ -113,7 +120,7 @@ function loadPageVar (sVar) {
  * type : 2 移除前面的空格；
  * type : 3 移除后面的所有空格；
  */
-function trim(str,type){
+function trim(str, type) {
   var length = arguments.length;
 
   if (typeof str === 'string') {
