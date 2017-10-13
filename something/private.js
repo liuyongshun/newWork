@@ -90,7 +90,11 @@ function modifyDataForPicker (data, target, dest) {
       switchDataContent,
       parseData;
 
-   reg = new RegExp(target, "g");
+  if (typeof target !== 'string') {
+    reg = target;
+  } else {
+    reg = new RegExp(target, "g");
+  }
 
   if (typeof data === 'string') {
     return data.replace(reg, dest);
@@ -159,6 +163,11 @@ function toggleCase (str) {
   });
 }
 
+/**
+ * 1. 手机号隐藏hideNumber ('18330235246', 0) ：183*****246 ; 必须是合格的手机号，加了正则限定。
+ * 2. 姓名隐藏hideNumber ('刘二狗', 1) ：刘**
+ * 3. 自定义：hideNumber('sdfslf', [2, 4],'-',8) ：字符串、开始和结束的位置、代替样式、该样式出现的次数。
+ */
 function hideNumber (str, pos, sty, styCount) {
   var argLength, strLength, mobileReg, checkType, defaultSty, endPos;
 
@@ -202,6 +211,9 @@ function hideNumber (str, pos, sty, styCount) {
 
 }
 
+/**
+ * 表单验证。
+ */
 function checkForm(str, type) {
   switch (type) {
       case 'email':
@@ -223,4 +235,98 @@ function checkForm(str, type) {
       default :
           return true;
   }
+}
+/**
+ * 密码强度检测。
+ */
+function checkPwd(str) {
+    var nowLv = 0;
+    if (str.length < 6) {
+        return nowLv
+    }
+    if (/[0-9]/.test(str)) {
+        nowLv++
+    }
+    if (/[a-z]/.test(str)) {
+        nowLv++
+    }
+    if (/[A-Z]/.test(str)) {
+        nowLv++
+    }
+    if (/[\.|-|_]/.test(str)) {
+        nowLv++
+    }
+    return nowLv;
+}
+
+/**
+ * 数组去重 ,针对字符串，数字等。
+ */
+function unique (arr) {
+    var res =[];
+    var obj = {};
+
+    for (var i = 0; i < arr.length; i ++) {
+        if (!obj[arr[i]]) {
+          res.push(arr[i]);
+          // to get effective property
+          obj[arr[i]] = 1;
+        }
+　　}
+　　return res;
+}
+function unique (arr) {
+    var newArr = [arr[0]];
+    for (var i = 1; i < arr.length; i ++) {
+      if (newArr.indexOf(arr[i]) == -1) {
+          newArr.push(arr[i]);
+      }
+    }
+    return newArr;
+ }
+
+
+/**
+ * 数组去重 ,通用
+ */
+function generalMethod (arr) {
+
+    var dest = [arr[0]];
+    var repeat;
+
+    for (var i = 1; i < arr.length; i ++) {
+　　　　var repeat = false;
+　　　　for (var j = 0; j < dest.length; j ++) {
+　　　　　　if (arr[i] == dest[j]) {
+　　　　　　　　repeat = true;
+　　　　　　　　break;
+　　　　　　}
+　　　　}
+　　　　if (!repeat) {
+　　　　　　dest.push(arr[i]);
+　　　　}
+　　}
+　　return dest;
+
+}
+
+/**
+ * 数组最大值最小值
+ */
+ function maxArr (arr) {
+     return Math.max.apply(null,arr);
+ }
+ function minArr (arr) {
+     return Math.min.apply(null,arr);
+ }
+/**
+ * 数组排序
+ */
+
+function minToMax (arr) {
+  function sortNumber (a, b) {
+    return a - b;
+  };
+  arr.sort(sortNumber);
+  return arr;
 }
