@@ -17,28 +17,113 @@
 </head>
 
 <body>
-    <div class="mainBox">
+  <section class="g-flexview">
+    <!-- tab fighting -->
+    <div class="g-scrollview">
+      <div class="mainBox">
         <div class="firstBox">
-            <div class="menuBox">
-                <ul>
-                    <li class="liactive">1</li>
-                    <li >2</li>
-                    <li >3</li>
-                </ul>
-            </div>
-            <div class="contentBox">
-                <ul>
-                    <li class="green">1</li>
-                    <li class="red">2</li>
-                    <li class="yellow">
-                        3
-                    </li>
-                </ul>
-            </div>
+          <div class="menuBox">
+            <ul>
+              <li class="liactive">1</li>
+              <li>1</li>
+            </ul>
+          </div>
+          <div class="contentBox">
+            <ul>
+              <li class="green">1</li>
+              <li class="red">1</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
+    <!-- tab ranking -->
+    <div class="g-scrollview hide">
+      <div class="mainBox">
+        <div class="firstBox">
+          <div class="menuBox">
+            <ul>
+              <li class="liactive">2</li>
+              <li>2</li>
+            </ul>
+          </div>
+          <div class="contentBox">
+            <ul>
+              <li class="green">2</li>
+              <li class="red">2</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- tab shop -->
+    <div class="g-scrollview hide">
+      <div class="mainBox">
+        <div class="firstBox">
+          <div class="menuBox">
+            <ul>
+              <li class="liactive">3</li>
+              <li>3</li>
+            </ul>
+          </div>
+          <div class="contentBox">
+            <ul>
+              <li class="green">3</li>
+              <li class="red">3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- tab mine -->
+    <div class="g-scrollview hide">
+      <div class="mainBox">
+        <div class="firstBox">
+          <div class="menuBox">
+            <ul>
+              <li class="liactive">4</li>
+              <li>4</li>
+            </ul>
+          </div>
+          <div class="contentBox">
+            <ul>
+              <li class="green">4</li>
+              <li class="red">4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- nav bottom -->
+    <footer class="m-tabbar">
+      <a href="#" class="tabbar-item">
+          <img class="l-nav-icon" src="./images/event_hill.png">
+          <span class="tabbar-txt">约战</span>
+      </a>
+      <a href="#" class="tabbar-item">
+          <img class="l-nav-icon" src="./images/ranking.png">
+          <span class="tabbar-txt">排行</span>
+      </a>
+      <a href="#" class="tabbar-item">
+          <img class="l-nav-icon" src="./images/shop.png">
+          <span class="tabbar-txt">商城</span>
+      </a>
+      <a href="#" class="tabbar-item">
+          <img class="l-nav-icon" src="./images/my.png">
+          <span class="tabbar-txt">我的</span>
+      </a>
+    </footer>
+  </section>
   <script src="js/ydui.js"></script>
   <script src="js/main.js"></script>
+  <script type="text/javascript">
+    $('body').on('click', '.tabbar-item', function () {
+      var index = $(this).index();
+      var $tabSwitch = $('.g-scrollview');
+
+      $tabSwitch.hide().eq(index).show();
+    })
+  </script>
 </body>
 
 </html>

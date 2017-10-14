@@ -47,7 +47,7 @@ var fistBoxController = (function(){
                             menuController(left);
                         }
                 }else if(disX < 0 && disX < -100){
-                        if(leftNum >= -100){
+                        if(leftNum >= 0){
                             ul.style.left = leftNum - 100 + "%";
                             var left = (~ parseInt(ul.style.left) + 1) / 100;
                             menuController(left);

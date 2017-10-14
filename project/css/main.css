@@ -27,7 +27,7 @@
 
 .menuBox ul li {
   height: 80px;
-  width: 33.333%;
+  width: 50%;
   border-bottom: 1px solid #ccc;
   background-color: #DFDFDF;
   text-align: center;
@@ -53,7 +53,7 @@
 
 .contentBox ul {
   height: 300px;
-  width: 300%;
+  width: 200%;
   display: flex;
   justify-content: center;
   align-items: center;
