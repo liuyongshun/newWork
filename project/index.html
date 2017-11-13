@@ -1,129 +1,88 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>约战</title>
-  <meta name="keywords" content="王者荣耀" />
-  <meta name="description" content="约战" />
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="format-detection" content="telephone=no" />
-  <link rel="stylesheet" href="css/public.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/ydui.css" />
-  <script src="js/ydui.flexible.js"></script>
-  <script src="js/jquery.min.js"></script>
+ <meta charset="UTF-8">
+ <title>抽奖</title>
+ <!-- 这里是css部分 -->
+ <style>
+ #bg{
+ width: 650px;
+ height: 600px;
+ margin: 0 auto;
+ background: url(turntable-bg.jpg) no-repeat;
+ position: relative;
+ }
+ img[src^="pointer"]{
+ position: absolute;
+ z-index: 10;
+ top: 155px;
+ left: 247px;
+ }
+ img[src^="turntable"]{
+ position: absolute;
+ z-index: 5;
+ top: 60px;
+ left: 116px;
+ transition: all 4s;
+ }
+
+ </style>
 </head>
-
 <body>
-  <section class="g-flexview">
-    <!-- tab fighting -->
-    <div class="g-scrollview">
-      <div class="mainBox">
-        <div class="firstBox">
-          <div class="menuBox">
-            <ul>
-              <li class="liactive">1</li>
-              <li>1</li>
-            </ul>
-          </div>
-          <div class="contentBox">
-            <ul>
-              <li class="green">1</li>
-              <li class="red">1</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- tab ranking -->
-    <div class="g-scrollview hide">
-      <div class="mainBox">
-        <div class="firstBox">
-          <div class="menuBox">
-            <ul>
-              <li class="liactive">2</li>
-              <li>2</li>
-            </ul>
-          </div>
-          <div class="contentBox">
-            <ul>
-              <li class="green">2</li>
-              <li class="red">2</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- tab shop -->
-    <div class="g-scrollview hide">
-      <div class="mainBox">
-        <div class="firstBox">
-          <div class="menuBox">
-            <ul>
-              <li class="liactive">3</li>
-              <li>3</li>
-            </ul>
-          </div>
-          <div class="contentBox">
-            <ul>
-              <li class="green">3</li>
-              <li class="red">3</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- tab mine -->
-    <div class="g-scrollview hide">
-      <div class="mainBox">
-        <div class="firstBox">
-          <div class="menuBox">
-            <ul>
-              <li class="liactive">4</li>
-              <li>4</li>
-            </ul>
-          </div>
-          <div class="contentBox">
-            <ul>
-              <li class="green">4</li>
-              <li class="red">4</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- nav bottom -->
-    <footer class="m-tabbar">
-      <a href="#" class="tabbar-item">
-          <img class="l-nav-icon" src="./images/event_hill.png">
-          <span class="tabbar-txt">约战</span>
-      </a>
-      <a href="#" class="tabbar-item">
-          <img class="l-nav-icon" src="./images/ranking.png">
-          <span class="tabbar-txt">排行</span>
-      </a>
-      <a href="#" class="tabbar-item">
-          <img class="l-nav-icon" src="./images/shop.png">
-          <span class="tabbar-txt">商城</span>
-      </a>
-      <a href="#" class="tabbar-item">
-          <img class="l-nav-icon" src="./images/my.png">
-          <span class="tabbar-txt">我的</span>
-      </a>
-    </footer>
-  </section>
-  <script src="js/ydui.js"></script>
-  <script src="js/main.js"></script>
-  <script type="text/javascript">
-    $('body').on('click', '.tabbar-item', function () {
-      var index = $(this).index();
-      var $tabSwitch = $('.g-scrollview');
+<!-- 这里是HTML结构部分 -->
+ <div id="bg">
+ <img src="pointer.png" alt="pointer">
+ <img src="turntable.png" alt="turntable">
+ </div>
+ <!-- 这里是js部分 -->
+ <script>
+ var oPointer=document.getElementsByTagName("img")[0];
+ var oTurntable=document.getElementsByTagName("img")[1];
+ var cat=51.4;
+ var num=0;
+ var offOn=true;
+ document.title="";
 
-      $tabSwitch.hide().eq(index).show();
-    })
-  </script>
+ oPointer.onclick=function(){
+ if(offOn){
+ oTurntable.style.transform="rotate(0deg)";
+ offOn=!offOn;
+ ratating();
+ }
+ }
+
+ function ratating(){
+ var timer=null;
+ var rdm=0;
+ clearInterval(timer);
+ timer=setInterval(function(){
+ if(Math.floor(rdm/360)<3){
+  rdm=Math.floor(Math.random()*3600);
+ }else{
+  oTurntable.style.transform="rotate("+rdm+"deg)";
+  clearInterval(timer);
+  setTimeout(function(){
+  offOn=!offOn;
+  num=rdm%360;
+  if(num<=cat*1){
+  alert("4999元");
+  }else if(num<=cat*2){
+  alert("条50元");
+  }else if(num<=cat*3){
+  alert("10元");
+  }else if(num<=cat*4){
+  alert("5元");
+  }else if(num<=cat*5){
+  alert("免息服务");
+  }else if(num<=cat*6){
+  alert("提交白金");
+  }else if(num<=cat*7){
+  alert("未中奖");
+  }
+  },4000);
+ }
+ },30);
+ }
+ </script>
 </body>
-
 </html>
