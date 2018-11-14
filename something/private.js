@@ -330,3 +330,46 @@ function minToMax (arr) {
   arr.sort(sortNumber);
   return arr;
 }
+
+/**
+ * 字符串出现次数最多
+ */
+
+var str = 'cccddddaaaaaaa f';
+var arr = [];
+var length = str.length;
+// 循环遍历字符串
+for (var i = 0; i < length; i++) {
+  var index = -1;
+  var j = 0;
+
+  for (var k = length; k > 0; k --) {
+    index = str.indexOf(str[i], index + 1);
+    if (index != -1) {
+      j++;
+      // debugger;
+      arr[j] = str[i];
+    } else {
+      break;
+    }
+
+  }
+  //找每一个字符
+}
+// for (var i = 0, length = str.length; i < length; i++) {
+// var index = -1;
+// var j = 0;
+// //找每一个字符
+// do {
+// index = str.indexOf(str[i], index + 1);
+// if (index != -1) {
+// j++;
+// }
+// }while (index != -1);
+// arr[j] = str[i]; //把字符串str中的字符赋给数组arr索引为j的数据，当多次循环后，会出现重复赋值的现象，　　　　　　　　　　　　　　　　　　//后赋值的会把之前的赋值覆盖掉，但不影响我们找出字符出现最多的那个
+// }
+console.log(arr);
+console.log("最多的字符是" + arr[arr.length - 1]);
+console.log("次数是" + (arr.length - 1));
+
+console.log(Math.max.apply(null, [1,2,3,5,5]))
