@@ -1,4 +1,4 @@
-/node/two/node_modules 
+/node/two/node_modules
 /node/two/lib/cookieKey.js
 /node/three/node_modules
 /node/two/public/css/!bootstrap.css
@@ -6,6 +6,7 @@
 /node/three/public/css/!bootstrap.css
 /node/three/public/js/!bootstrap.js
 /node/one/node_modules
+*.sublime*
 *.zip
 *.jshintrc
 # 忽略了node_modules文件
